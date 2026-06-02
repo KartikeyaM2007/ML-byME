@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#0b0f14"/>
+  <rect x="24" y="24" width="200" height="492" rx="8" fill="#151b24"/>
+  <text x="48" y="56" fill="#3178c6" font-family="system-ui,sans-serif" font-size="14">Papers · Tracks</text>
+  <rect x="240" y="24" width="696" height="492" rx="8" fill="#121820"/>
+  <text x="264" y="56" fill="#e8eaed" font-family="system-ui,sans-serif" font-size="18" font-weight="600">Research hub  Transformer, LLaMA, &</text>
+  <text x="264" y="90" fill="#9aa0a6" font-family="system-ui,sans-serif" font-size="12">Replace with research.png</text>
+</svg>

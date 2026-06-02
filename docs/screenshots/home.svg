@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <rect width="960" height="540" fill="#0b0f14"/>
+  <rect x="24" y="24" width="912" height="48" rx="8" fill="#151b24"/>
+  <text x="48" y="56" fill="#8ab4ff" font-family="system-ui,sans-serif" font-size="18" font-weight="600">ML-byME  Home</text>
+  <rect x="24" y="96" width="560" height="320" rx="12" fill="#121820"/>
+  <text x="48" y="140" fill="#e8eaed" font-family="system-ui,sans-serif" font-size="22" font-weight="700">Learn ML by building</text>
+  <text x="48" y="175" fill="#9aa0a6" font-family="system-ui,sans-serif" font-size="14">Video landing · Explore tracks · Start coding</text>
+  <rect x="48" y="200" width="140" height="40" rx="8" fill="#3178c6"/>
+  <text x="78" y="226" fill="#fff" font-family="system-ui,sans-serif" font-size="13">Get started</text>
+  <rect x="608" y="96" width="328" height="320" rx="12" fill="#1a2230"/>
+  <text x="632" y="130" fill="#9aa0a6" font-family="system-ui,sans-serif" font-size="12">Replace with a real screenshot (home.png)</text>
+</svg>
