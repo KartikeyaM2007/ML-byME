@@ -26,40 +26,31 @@ An open ML coding practice platform inspired by TensorTonic — problems, resear
 
 ## Screenshots
 
-> Place real PNGs in `docs/screenshots/` (same names, `.png`) to replace the placeholder SVGs below.  
-> Suggested captures: full browser window at 1280×720 or 1440×900.
+Captured from local dev (`npm run dev` at 1280×720). Regenerate with `npm run screenshots:readme`.
 
 ### Home
 
-Landing page with hero video, explore cards, and entry into the app.
+Landing page — hero, research CTA, and platform stats.
 
-![Home page](docs/screenshots/home.svg)
+![Home page](docs/screenshots/home.png)
 
 ### Problems workspace
 
-Browse categories, open a problem, edit Python in Monaco, run tests, and submit.
+Browse categories, filters, and the full problem catalog.
 
-![Problems workspace](docs/screenshots/problems.svg)
+![Problems workspace](docs/screenshots/problems.png)
 
 ### Research hub
 
-Pick a paper track, read the sidebar outline, and jump to implementation problems.
+Paper tracks (Transformers, LLaMA, ResNet, …) and research-themed coding paths.
 
-![Research hub](docs/screenshots/research.svg)
+![Research hub](docs/screenshots/research.png)
 
 ### Study plans
 
-Grid of plans; each plan opens sections with linked problems.
+Curated learning paths with sections and linked exercises.
 
-![Study plans](docs/screenshots/study-plans.svg)
-
-**Optional captures** (add when ready):
-
-| File | Page |
-|------|------|
-| `docs/screenshots/ml-math.png` | `/ml-math` — lesson list and lesson view |
-| `docs/screenshots/interview-prep.png` | `/interview-prep` |
-| `docs/screenshots/run-submit.png` | Problem detail after **Run** or **Submit** |
+![Study plans](docs/screenshots/study-plans.png)
 
 ---
 
@@ -122,6 +113,7 @@ npm run start
 | `npm run build` | Production frontend build |
 | `npm run start` | Build + serve SPA + API together |
 | `npm run test:all` | Data checks, build, smoke tests |
+| `npm run screenshots:readme` | Save README screenshots from localhost:5173 |
 
 ---
 

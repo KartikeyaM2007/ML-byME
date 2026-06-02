@@ -32,7 +32,8 @@
     "start:api": "node scripts/start-production.cjs",
     "docker:build": "docker build -t tensortonic .",
     "docker:up": "docker compose up --build -d",
-    "docker:down": "docker compose down"
+    "docker:down": "docker compose down",
+    "screenshots:readme": "node scripts/capture-readme-screenshots.mjs"
   },
   "devDependencies": {
     "@emnapi/core": "^1.10.0",
@@ -41,6 +42,7 @@
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "^6.0.2",
+    "playwright": "^1.60.0",
     "typescript": "~6.0.2",
     "vite": "^8.0.12"
   },
