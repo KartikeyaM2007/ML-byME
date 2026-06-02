@@ -1,0 +1,12 @@
+services:
+  tensortonic:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      PYTHON: python3
+      CORS_ORIGIN: "*"
+    working_dir: /app/backend
+

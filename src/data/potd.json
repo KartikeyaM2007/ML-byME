@@ -1,0 +1,10 @@
+{
+  "id": "bag-of-words",
+  "title": "# <span style=\"font-size: 20px;\">Bag-of-Words Vector</span>",
+  "difficulty": "Easy",
+  "tags": [
+    "NLP",
+    "Feature Engineering"
+  ],
+  "solvedAt": null
+}

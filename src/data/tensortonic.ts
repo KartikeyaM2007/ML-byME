@@ -1,0 +1,3427 @@
+export type Difficulty = 'Easy' | 'Medium' | 'Hard';
+
+export type TonicProblem = {
+  id: number;
+  slug: string;
+  title: string;
+  categories: string[];
+  difficulty: Difficulty;
+};
+
+export const studyPlans = [
+  {
+    "count": 30,
+    "slug": "pytorch-basics",
+    "title": "PyTorch Sheet"
+  },
+  {
+    "count": 35,
+    "slug": "cuda-basics",
+    "title": "CUDA Kernels"
+  },
+  {
+    "count": 35,
+    "slug": "cracking-ml",
+    "title": "Cracking ML"
+  },
+  {
+    "count": 35,
+    "slug": "cracking-dl",
+    "title": "Cracking Deep Learning"
+  },
+  {
+    "count": 25,
+    "slug": "numpy-basics",
+    "title": "NumPy Sheet"
+  },
+  {
+    "count": 25,
+    "slug": "sql-basics",
+    "title": "SQL Sheet"
+  },
+  {
+    "count": 30,
+    "slug": "math-probability",
+    "title": "Probability & Statistics"
+  },
+  {
+    "count": 30,
+    "slug": "math-linear-algebra",
+    "title": "Linear Algebra"
+  },
+  {
+    "count": 30,
+    "slug": "math-calculus",
+    "title": "Calculus for ML"
+  },
+  {
+    "count": 25,
+    "slug": "math-optimization",
+    "title": "Optimization"
+  },
+  {
+    "count": 25,
+    "slug": "pandas-basics",
+    "title": "Pandas Sheet"
+  },
+  {
+    "count": 35,
+    "slug": "cracking-nlp",
+    "title": "Cracking NLP"
+  },
+  {
+    "count": 30,
+    "slug": "cracking-rl",
+    "title": "Cracking RL"
+  },
+  {
+    "count": 35,
+    "slug": "cracking-cv",
+    "title": "Cracking CV"
+  },
+  {
+    "count": 30,
+    "slug": "triton-basics",
+    "title": "Triton Kernels"
+  }
+] as const;
+
+export const problemCategories = [
+  "Metrics & Evaluation",
+  "Activation Functions",
+  "Probability and Statistics",
+  "Recommender Systems",
+  "Feature Engineering",
+  "Reinforcement Learning",
+  "Computer Vision",
+  "Data Processing",
+  "Loss Functions",
+  "Linear Algebra",
+  "Neural Networks",
+  "Optimization",
+  "Transformers",
+  "Classic ML",
+  "3D Geometry",
+  "Time Series",
+  "MLOps",
+  "NLP"
+] as const;
+
+export const tonicProblems: TonicProblem[] = [
+  {
+    "id": 1,
+    "slug": "sigmoid-numpy",
+    "title": "Implement Sigmoid in NumPy",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "slug": "logistic-regression-training",
+    "title": "Logistic Regression Training Loop",
+    "categories": [
+      "Loss Functions",
+      "Optimization"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 3,
+    "slug": "pad-sequences",
+    "title": "Pad Sequences",
+    "categories": [
+      "NLP",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 4,
+    "slug": "matrix-transpose",
+    "title": "Matrix Transpose",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "slug": "positional-encoding",
+    "title": "Implement Positional Encoding (sin/cos)",
+    "categories": [
+      "Linear Algebra",
+      "Transformers"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 6,
+    "slug": "gradient-descent-quadratic",
+    "title": "Implement Gradient Descent for a 1D Quadratic",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 7,
+    "slug": "adam-optimizer",
+    "title": "Implement Adam Optimizer Step",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 8,
+    "slug": "dropout-training",
+    "title": "Implement Dropout (Training Mode)",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 9,
+    "slug": "rmsprop-optimizer",
+    "title": "RMSProp Optimizer (Single Update Step)",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 10,
+    "slug": "anchor-box-generation",
+    "title": "Anchor Box Generation",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 11,
+    "slug": "homogeneous-transform",
+    "title": "Apply 4×4 Homogeneous Transform",
+    "categories": [
+      "3D Geometry"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 12,
+    "slug": "value-iteration-step",
+    "title": "Value Iteration Step",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 13,
+    "slug": "expected-value-discrete",
+    "title": "Expected Value (Discrete Distribution)",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 14,
+    "slug": "entropy-node",
+    "title": "Compute Entropy for a Node",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 15,
+    "slug": "precision-recall-at-k",
+    "title": "Precision and Recall at K",
+    "categories": [
+      "Recommender Systems",
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 16,
+    "slug": "metrics-f1-micro",
+    "title": "Implement Micro-F1",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 17,
+    "slug": "cross-entropy-loss",
+    "title": "Implement Cross-Entropy Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 18,
+    "slug": "manhattan-distance",
+    "title": "Implement Manhattan Distance",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 19,
+    "slug": "euclidean-distance",
+    "title": "Implement Euclidean Distance",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 20,
+    "slug": "gru-cell-forward",
+    "title": "Build a Mini GRU Cell (Forward Pass)",
+    "categories": [
+      "NLP",
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 21,
+    "slug": "causal-masking",
+    "title": "Implement Causal Masking for Attention",
+    "categories": [
+      "Transformers"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 22,
+    "slug": "global-avg-pooling",
+    "title": "Implement Global Average Pooling",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 23,
+    "slug": "simple-cnn-layer",
+    "title": "Implement a Simple CNN Layer (NumPy)",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 24,
+    "slug": "leaky-relu",
+    "title": "Implement Leaky ReLU (with α)",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 25,
+    "slug": "silhouette-score",
+    "title": "Compute Silhouette Score",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 26,
+    "slug": "softmax-function",
+    "title": "Implement Softmax Function",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 27,
+    "slug": "cosine-similarity",
+    "title": "Implement Cosine Similarity",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 28,
+    "slug": "minmax-normalization",
+    "title": "Implement Min-Max Normalization",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 29,
+    "slug": "zscore-standardization",
+    "title": "Implement z-Score Standardization",
+    "categories": [
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 30,
+    "slug": "classification-metrics",
+    "title": "Compute Accuracy, Precision, Recall, F1",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 31,
+    "slug": "r2-score",
+    "title": "Implement R² Score (Coefficient of Determination)",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 32,
+    "slug": "linear-lr-scheduler",
+    "title": "Learning Rate Scheduler (Linear Decay)",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 33,
+    "slug": "batch-normalization",
+    "title": "Batch Normalization (Forward)",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 34,
+    "slug": "hinge-loss",
+    "title": "Implement Hinge Loss (Binary SVM)",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 35,
+    "slug": "contrastive-loss",
+    "title": "Implement Contrastive Loss (Siamese)",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 36,
+    "slug": "gelu",
+    "title": "Implement GELU Activation (Gaussian Error Linear Unit)",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 37,
+    "slug": "dot-product",
+    "title": "Implement Dot Product",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 38,
+    "slug": "matrix-normalization",
+    "title": "Implement Matrix Normalization",
+    "categories": [
+      "Linear Algebra",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 39,
+    "slug": "tfidf-vectorizer",
+    "title": "Implement TF-IDF Vectorizer",
+    "categories": [
+      "NLP",
+      "Linear Algebra",
+      "Feature Engineering"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 40,
+    "slug": "bm25",
+    "title": "Implement BM25 Ranking Score",
+    "categories": [
+      "NLP",
+      "Linear Algebra",
+      "Data Processing"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 41,
+    "slug": "eigenvalues",
+    "title": "Calculate Eigenvalues of a Matrix",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 42,
+    "slug": "covariance-matrix",
+    "title": "Compute Covariance Matrix",
+    "categories": [
+      "Linear Algebra",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 43,
+    "slug": "pearson-correlation",
+    "title": "Compute Pearson Correlation Matrix",
+    "categories": [
+      "Linear Algebra",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 44,
+    "slug": "gradient-clipping",
+    "title": "Gradient Clipping (Global Norm)",
+    "categories": [
+      "Neural Networks",
+      "Optimization"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 45,
+    "slug": "adagrad-optimizer",
+    "title": "AdaGrad Optimizer",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 46,
+    "slug": "nesterov-momentum",
+    "title": "Implement Nesterov Momentum (NAG)",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 47,
+    "slug": "adamw-optimizer",
+    "title": "Implement AdamW (Decoupled Weight Decay)",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 48,
+    "slug": "adadelta-optimizer",
+    "title": "Implement AdaDelta Update Step",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 49,
+    "slug": "nadam-optimizer",
+    "title": "Implement Nadam (Nesterov + Adam)",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 50,
+    "slug": "relu-activation",
+    "title": "Implement ReLU Activation",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 51,
+    "slug": "tanh-activation",
+    "title": "Implement Tanh Activation",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 52,
+    "slug": "swish-activation",
+    "title": "Implement Swish Activation",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 53,
+    "slug": "huber-loss",
+    "title": "Implement Huber Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 54,
+    "slug": "triplet-loss",
+    "title": "Implement Triplet Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 55,
+    "slug": "info-nce-loss",
+    "title": "Implement InfoNCE Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 56,
+    "slug": "focal-loss",
+    "title": "Implement Focal Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 57,
+    "slug": "dice-loss",
+    "title": "Implement Dice Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 58,
+    "slug": "kl-divergence",
+    "title": "Implement KL Divergence",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 59,
+    "slug": "wasserstein-critic-loss",
+    "title": "Implement Wasserstein Critic Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 60,
+    "slug": "bernoulli-pmf",
+    "title": "Bernoulli Probability Mass Function & Moments",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 61,
+    "slug": "binomial-pmf-cdf",
+    "title": "Binomial Probability Mass Function",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 62,
+    "slug": "poisson-pmf-cdf",
+    "title": "Poisson Probability Mass Function & Cumulative Distribution Function",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 63,
+    "slug": "geometric-pmf-mean",
+    "title": "Geometric Probability Mass Function & Mean",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 64,
+    "slug": "mean-median-mode",
+    "title": "Mean, Median, Mode",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 65,
+    "slug": "sample-var-std",
+    "title": "Sample Variance & Standard Deviation",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 66,
+    "slug": "percentiles",
+    "title": "Percentiles / Quantiles",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 67,
+    "slug": "chi2-independence",
+    "title": "Chi-Square Test",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 68,
+    "slug": "t-test-one-sample",
+    "title": "One-Sample t-Test",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 69,
+    "slug": "stratified-split",
+    "title": "Stratified Train/Test Split",
+    "categories": [
+      "Data Processing"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 70,
+    "slug": "batch-generator",
+    "title": "Batch Shuffling & Mini-Batch Generator",
+    "categories": [
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 71,
+    "slug": "impute-missing",
+    "title": "Impute Missing Values (mean/median)",
+    "categories": [
+      "Data Processing"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 72,
+    "slug": "one-hot-encoding",
+    "title": "One-Hot Encoding (Multi-class)",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 73,
+    "slug": "streaming-minmax",
+    "title": "Streaming Min-Max Normalization",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 74,
+    "slug": "roc-curve",
+    "title": "Compute ROC Curve from Scores",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 75,
+    "slug": "auc",
+    "title": "Compute AUC (Area Under ROC)",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 76,
+    "slug": "mean-average-precision",
+    "title": "Compute Mean Average Precision (mAP)",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 77,
+    "slug": "confusion-matrix-norm",
+    "title": "Compute Confusion Matrix with Normalization",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 78,
+    "slug": "gini-impurity",
+    "title": "Compute Gini Impurity for a Split",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 79,
+    "slug": "majority-classifier",
+    "title": "Implement Majority Class Classifier",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 80,
+    "slug": "knn-distance",
+    "title": "KNN Distance + Neighbor Lookup",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 81,
+    "slug": "naive-bayes-bernoulli",
+    "title": "Naive Bayes Log-Likelihood (Bernoulli)",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 82,
+    "slug": "information-gain",
+    "title": "Compute Information Gain for a Split",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 83,
+    "slug": "matrix-trace",
+    "title": "Matrix Trace",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 84,
+    "slug": "bootstrap-mean",
+    "title": "Bootstrap Mean & Confidence Interval",
+    "categories": [
+      "Probability and Statistics"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 85,
+    "slug": "rnn-step-forward",
+    "title": "RNN Step Forward (Tanh Cell)",
+    "categories": [
+      "NLP",
+      "Neural Networks"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 86,
+    "slug": "kfold-split",
+    "title": "K-Fold Split (Indices Only)",
+    "categories": [
+      "Data Processing"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 87,
+    "slug": "make-diagonal",
+    "title": "Make Diagonal Matrix",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 88,
+    "slug": "matrix-inverse",
+    "title": "Matrix Inverse",
+    "categories": [
+      "Linear Algebra"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 89,
+    "slug": "mean-squared-error",
+    "title": "Mean Squared Error (MSE)",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 90,
+    "slug": "rnn-step-backward",
+    "title": "RNN Step Backward (Vanilla RNN)",
+    "categories": [
+      "NLP",
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 91,
+    "slug": "td-value-update",
+    "title": "One-Step TD Value Update",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 92,
+    "slug": "q-learning-update",
+    "title": "Tabular Q-Learning (Single Update)",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 93,
+    "slug": "epsilon-greedy",
+    "title": "ε-Greedy Action Selection",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 94,
+    "slug": "mc-policy-evaluation",
+    "title": "Monte Carlo Policy Evaluation",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 95,
+    "slug": "compute-advantage",
+    "title": "Advantage Computation",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 96,
+    "slug": "vector-norm-3d",
+    "title": "Compute 3D Vector Norm",
+    "categories": [
+      "3D Geometry"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 97,
+    "slug": "normalize-3d",
+    "title": "Normalize 3D Vectors",
+    "categories": [
+      "3D Geometry"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 98,
+    "slug": "angle-between-3d",
+    "title": "Angle Between 3D Vectors",
+    "categories": [
+      "3D Geometry"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 99,
+    "slug": "rotate-around-z",
+    "title": "Rotate 3D Point Around Z-Axis",
+    "categories": [
+      "3D Geometry"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 100,
+    "slug": "bigram-probabilities",
+    "title": "Bigram Probabilities (Add-1 Smoothing)",
+    "categories": [
+      "NLP"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 101,
+    "slug": "remove-stopwords",
+    "title": "Remove Stopwords",
+    "categories": [
+      "NLP",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 102,
+    "slug": "bag-of-words",
+    "title": "Bag-of-Words Vector",
+    "categories": [
+      "NLP",
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 103,
+    "slug": "word-count-dict",
+    "title": "Word Count Dictionary",
+    "categories": [
+      "NLP"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 104,
+    "slug": "train-serving-skew",
+    "title": "Detect Train-Serving Skew",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 105,
+    "slug": "model-versioning-basics",
+    "title": "Model Versioning",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 106,
+    "slug": "feature-store-lookup",
+    "title": "Feature Store Lookup",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 107,
+    "slug": "data-drift-detection",
+    "title": "Data Drift Detection",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 108,
+    "slug": "monitoring-metrics-selection",
+    "title": "Monitoring Metrics Selection",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 109,
+    "slug": "retraining-trigger-design",
+    "title": "Retraining Trigger Design",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 110,
+    "slug": "shadow-deployment-evaluation",
+    "title": "Shadow Deployment Evaluation",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 111,
+    "slug": "etl-schema-validation",
+    "title": "ETL Schema Validation",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 112,
+    "slug": "etl-deduplication",
+    "title": "ETL Deduplication",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 113,
+    "slug": "etl-dependency-orchestration",
+    "title": "ETL Dependency Orchestration",
+    "categories": [
+      "MLOps"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 114,
+    "slug": "cohens-kappa",
+    "title": "Cohen's Kappa",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 115,
+    "slug": "log-loss-per-sample",
+    "title": "Log Loss (Per-Sample)",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 116,
+    "slug": "expected-calibration-error",
+    "title": "Expected Calibration Error",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 117,
+    "slug": "ndcg",
+    "title": "NDCG (Normalized Discounted Cumulative Gain)",
+    "categories": [
+      "Recommender Systems",
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 118,
+    "slug": "isotonic-calibration",
+    "title": "Isotonic Regression Calibration",
+    "categories": [
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 119,
+    "slug": "iou-bounding-box",
+    "title": "Intersection over Union (IoU)",
+    "categories": [
+      "Metrics & Evaluation",
+      "Computer Vision"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 120,
+    "slug": "non-maximum-suppression",
+    "title": "Non-Maximum Suppression",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 121,
+    "slug": "conv2d-image-filtering",
+    "title": "2D Convolution (Image Filtering)",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 122,
+    "slug": "bilinear-interpolation",
+    "title": "Bilinear Interpolation",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 123,
+    "slug": "roi-pooling",
+    "title": "ROI Pooling",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 124,
+    "slug": "image-histogram",
+    "title": "Image Histogram",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 125,
+    "slug": "gaussian-blur-kernel",
+    "title": "Gaussian Blur Kernel",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 126,
+    "slug": "warmup-decay-lr",
+    "title": "Warmup + Linear Decay LR Schedule",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 127,
+    "slug": "cosine-annealing-lr",
+    "title": "Cosine Annealing LR Scheduler",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 128,
+    "slug": "lbfgs-two-loop",
+    "title": "L-BFGS Two-Loop Recursion",
+    "categories": [
+      "Optimization"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 129,
+    "slug": "sobel-edge-detection",
+    "title": "Sobel Edge Detection",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 130,
+    "slug": "histogram-equalization",
+    "title": "Histogram Equalization",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 131,
+    "slug": "morphological-operations",
+    "title": "Morphological Erosion and Dilation",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 132,
+    "slug": "image-rotation-nearest",
+    "title": "Image Rotation (Nearest Neighbor)",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 133,
+    "slug": "elu-activation",
+    "title": "ELU Activation",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 134,
+    "slug": "selu-activation",
+    "title": "SELU Activation",
+    "categories": [
+      "Activation Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 135,
+    "slug": "label-smoothing-loss",
+    "title": "Label Smoothing Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 136,
+    "slug": "cosine-embedding-loss",
+    "title": "Cosine Embedding Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 137,
+    "slug": "binary-focal-loss",
+    "title": "Binary Focal Loss",
+    "categories": [
+      "Loss Functions"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 138,
+    "slug": "discount-returns",
+    "title": "Discounted Returns",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 139,
+    "slug": "sarsa-update",
+    "title": "SARSA Update",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 140,
+    "slug": "replay-buffer-sample",
+    "title": "Replay Buffer Sample",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 141,
+    "slug": "policy-gradient-loss",
+    "title": "Policy Gradient Loss",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 142,
+    "slug": "gae-computation",
+    "title": "Generalized Advantage Estimation",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 143,
+    "slug": "priority-replay-sample",
+    "title": "Prioritized Experience Replay",
+    "categories": [
+      "Reinforcement Learning"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 144,
+    "slug": "linear-regression-closed-form",
+    "title": "Linear Regression Closed Form",
+    "categories": [
+      "Linear Algebra",
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 145,
+    "slug": "k-means-assignment",
+    "title": "K-Means Assignment Step",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 146,
+    "slug": "k-means-centroid-update",
+    "title": "K-Means Centroid Update",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 147,
+    "slug": "random-forest-vote",
+    "title": "Random Forest Majority Vote",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 148,
+    "slug": "ridge-regression",
+    "title": "Ridge Regression",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 149,
+    "slug": "pca-projection",
+    "title": "PCA Projection",
+    "categories": [
+      "Linear Algebra",
+      "Classic ML"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 150,
+    "slug": "decision-tree-split",
+    "title": "Decision Tree Best Split",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 151,
+    "slug": "gaussian-naive-bayes",
+    "title": "Gaussian Naive Bayes",
+    "categories": [
+      "Classic ML"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 152,
+    "slug": "linear-layer-forward",
+    "title": "Linear Layer Forward",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 153,
+    "slug": "xavier-initialization",
+    "title": "Xavier Initialization",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 154,
+    "slug": "he-initialization",
+    "title": "He Initialization",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 155,
+    "slug": "maxpool-forward",
+    "title": "Max Pooling Forward",
+    "categories": [
+      "Neural Networks"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 156,
+    "slug": "edit-distance",
+    "title": "Edit Distance",
+    "categories": [
+      "NLP"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 157,
+    "slug": "text-chunking",
+    "title": "Text Chunking",
+    "categories": [
+      "NLP",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 158,
+    "slug": "bleu-score",
+    "title": "BLEU Score",
+    "categories": [
+      "NLP",
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 159,
+    "slug": "perplexity-computation",
+    "title": "Perplexity Computation",
+    "categories": [
+      "NLP"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 160,
+    "slug": "max-pooling-2d",
+    "title": "Max Pooling 2D",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 161,
+    "slug": "average-pooling-2d",
+    "title": "Average Pooling 2D",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 162,
+    "slug": "color-to-grayscale",
+    "title": "Color to Grayscale",
+    "categories": [
+      "Computer Vision"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 163,
+    "slug": "simple-moving-average",
+    "title": "Simple Moving Average",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 164,
+    "slug": "exponential-moving-average",
+    "title": "Exponential Moving Average",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 165,
+    "slug": "autocorrelation",
+    "title": "Autocorrelation",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 166,
+    "slug": "linear-interpolation",
+    "title": "Linear Interpolation",
+    "categories": [
+      "Time Series",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 167,
+    "slug": "rating-normalization",
+    "title": "Rating Normalization",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 168,
+    "slug": "top-k-recommendations",
+    "title": "Top-K Recommendations",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 169,
+    "slug": "user-based-cf-prediction",
+    "title": "User-Based CF Prediction",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 170,
+    "slug": "matrix-factorization-sgd-step",
+    "title": "Matrix Factorization SGD Step",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 171,
+    "slug": "target-encoding",
+    "title": "Target Encoding",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 172,
+    "slug": "polynomial-features",
+    "title": "Polynomial Features",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 173,
+    "slug": "binning",
+    "title": "Binning",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 174,
+    "slug": "interaction-features",
+    "title": "Interaction Features",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 175,
+    "slug": "differencing",
+    "title": "Differencing",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 176,
+    "slug": "lag-features",
+    "title": "Lag Features",
+    "categories": [
+      "Time Series",
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 177,
+    "slug": "weighted-moving-average",
+    "title": "Weighted Moving Average",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 178,
+    "slug": "rolling-standard-deviation",
+    "title": "Rolling Standard Deviation",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 179,
+    "slug": "jaccard-similarity",
+    "title": "Jaccard Similarity",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 180,
+    "slug": "item-cf-predict",
+    "title": "Item-Based CF Prediction",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 181,
+    "slug": "popularity-ranking",
+    "title": "Popularity Ranking",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 182,
+    "slug": "baseline-predictor",
+    "title": "Baseline Predictor",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 183,
+    "slug": "ordinal-encoding",
+    "title": "Ordinal Encoding",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 184,
+    "slug": "frequency-encoding",
+    "title": "Frequency Encoding",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 185,
+    "slug": "log-transform",
+    "title": "Log Transform",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 186,
+    "slug": "min-max-scaling",
+    "title": "Min-Max Scaling",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 187,
+    "slug": "cyclic-encoding",
+    "title": "Cyclic Encoding",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 188,
+    "slug": "percent-change",
+    "title": "Percent Change",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 189,
+    "slug": "moving-median",
+    "title": "Moving Median",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 190,
+    "slug": "double-exponential-smoothing",
+    "title": "Double Exponential Smoothing",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 191,
+    "slug": "cumulative-returns",
+    "title": "Cumulative Returns",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 192,
+    "slug": "seasonal-average",
+    "title": "Seasonal Average",
+    "categories": [
+      "Time Series"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 193,
+    "slug": "catalog-coverage",
+    "title": "Catalog Coverage",
+    "categories": [
+      "Recommender Systems",
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 194,
+    "slug": "adjusted-cosine-similarity",
+    "title": "Adjusted Cosine Similarity",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 195,
+    "slug": "hit-rate-at-k",
+    "title": "Hit Rate at K",
+    "categories": [
+      "Recommender Systems",
+      "Metrics & Evaluation"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 196,
+    "slug": "mean-rating-imputation",
+    "title": "Mean Rating Imputation",
+    "categories": [
+      "Recommender Systems",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 197,
+    "slug": "novelty-score",
+    "title": "Novelty Score",
+    "categories": [
+      "Recommender Systems"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 198,
+    "slug": "robust-scaling",
+    "title": "Robust Scaling",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 199,
+    "slug": "rank-transform",
+    "title": "Rank Transform",
+    "categories": [
+      "Feature Engineering"
+    ],
+    "difficulty": "Easy"
+  },
+  {
+    "id": 200,
+    "slug": "winsorization",
+    "title": "Winsorization",
+    "categories": [
+      "Feature Engineering",
+      "Data Processing"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 201,
+    "slug": "transformers-tokenization",
+    "title": "Transformer Tokenization",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 202,
+    "slug": "transformers-embedding",
+    "title": "Token Embedding Layer",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 203,
+    "slug": "transformers-positional-encoding",
+    "title": "Sinusoidal Positional Encoding",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 204,
+    "slug": "transformers-attention",
+    "title": "Scaled Dot-Product Attention",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 205,
+    "slug": "transformers-multi-head-attention",
+    "title": "Multi-Head Attention",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 206,
+    "slug": "transformers-feed-forward",
+    "title": "Position-wise Feed-Forward Network",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 207,
+    "slug": "transformers-layer-normalization",
+    "title": "Layer Normalization",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 208,
+    "slug": "transformers-encoder-block",
+    "title": "Transformer Encoder Block",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "difficulty": "Hard"
+  },
+  {
+    "id": 209,
+    "slug": "resnet-identity-block",
+    "title": "Identity Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 210,
+    "slug": "resnet-conv-block",
+    "title": "Convolutional Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 211,
+    "slug": "resnet-bottleneck",
+    "title": "Bottleneck Architecture",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 212,
+    "slug": "resnet-skip-connection",
+    "title": "Skip Connection Mechanics",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 213,
+    "slug": "resnet-batch-norm",
+    "title": "BatchNorm in ResNet",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 214,
+    "slug": "resnet-full-network",
+    "title": "Full ResNet Assembly",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 215,
+    "slug": "bert-wordpiece",
+    "title": "WordPiece Tokenization",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 216,
+    "slug": "bert-segment-embedding",
+    "title": "Segment Embeddings",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 217,
+    "slug": "bert-masked-lm",
+    "title": "Masked Language Modeling",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 218,
+    "slug": "bert-nsp",
+    "title": "Next Sentence Prediction",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 219,
+    "slug": "bert-pooler",
+    "title": "BERT Pooler",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 220,
+    "slug": "bert-fine-tuning",
+    "title": "Fine-tuning Architecture",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 221,
+    "slug": "vgg-conv-block",
+    "title": "VGG Conv Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 222,
+    "slug": "vgg-maxpool",
+    "title": "VGG Max Pooling",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 223,
+    "slug": "vgg-classifier",
+    "title": "VGG Classifier Head",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 224,
+    "slug": "vgg-config",
+    "title": "VGG Configuration",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 225,
+    "slug": "vgg-feature-extractor",
+    "title": "VGG Feature Extractor",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 226,
+    "slug": "vgg-full-network",
+    "title": "Complete VGG Network",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 227,
+    "slug": "unet-encoder-block",
+    "title": "U-Net Encoder Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 228,
+    "slug": "unet-decoder-block",
+    "title": "U-Net Decoder Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 229,
+    "slug": "unet-skip-connection",
+    "title": "U-Net Skip Connections",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 230,
+    "slug": "unet-bottleneck",
+    "title": "U-Net Bottleneck",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 231,
+    "slug": "unet-output-layer",
+    "title": "U-Net Output Layer",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 232,
+    "slug": "unet-full-network",
+    "title": "Complete U-Net",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 233,
+    "slug": "vae-encoder",
+    "title": "VAE Encoder",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 234,
+    "slug": "vae-reparameterization",
+    "title": "Reparameterization Trick",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 235,
+    "slug": "vae-decoder",
+    "title": "VAE Decoder",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 236,
+    "slug": "vae-kl-divergence",
+    "title": "KL Divergence",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 237,
+    "slug": "vae-elbo-loss",
+    "title": "ELBO Loss",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 238,
+    "slug": "vae-full-network",
+    "title": "Complete VAE",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 239,
+    "slug": "gan-generator",
+    "title": "Generator",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 240,
+    "slug": "gan-discriminator",
+    "title": "Discriminator",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 241,
+    "slug": "gan-loss",
+    "title": "GAN Loss Functions",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 242,
+    "slug": "gan-training-loop",
+    "title": "Training Loop",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 243,
+    "slug": "gan-mode-collapse",
+    "title": "Mode Collapse",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 244,
+    "slug": "gan-full-network",
+    "title": "Complete GAN",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 245,
+    "slug": "vit-patch-embedding",
+    "title": "Patch Embedding",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 246,
+    "slug": "vit-position-embedding",
+    "title": "Position Embedding",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 247,
+    "slug": "vit-class-token",
+    "title": "Class Token [CLS]",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 248,
+    "slug": "vit-encoder-block",
+    "title": "ViT Encoder Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 249,
+    "slug": "vit-mlp-head",
+    "title": "Classification Head",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 250,
+    "slug": "vit-full-network",
+    "title": "Complete ViT",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 251,
+    "slug": "rnn-cell",
+    "title": "RNN Cell",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 252,
+    "slug": "rnn-hidden-state",
+    "title": "Hidden State",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 253,
+    "slug": "rnn-forward-sequence",
+    "title": "Forward Through Sequence",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 254,
+    "slug": "rnn-bptt",
+    "title": "Backprop Through Time",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 255,
+    "slug": "rnn-vanishing-gradients",
+    "title": "Vanishing Gradients",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 256,
+    "slug": "rnn-full-network",
+    "title": "Complete RNN",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 257,
+    "slug": "lstm-forget-gate",
+    "title": "Forget Gate",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 258,
+    "slug": "lstm-input-gate",
+    "title": "Input Gate",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 259,
+    "slug": "lstm-cell-state",
+    "title": "Cell State",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 260,
+    "slug": "lstm-output-gate",
+    "title": "Output Gate",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 261,
+    "slug": "lstm-cell",
+    "title": "LSTM Cell",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 262,
+    "slug": "lstm-full-network",
+    "title": "Complete LSTM",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 263,
+    "slug": "gru-reset-gate",
+    "title": "Reset Gate",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 264,
+    "slug": "gru-update-gate",
+    "title": "Update Gate",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 265,
+    "slug": "gru-candidate",
+    "title": "Candidate Hidden",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 266,
+    "slug": "gru-hidden-update",
+    "title": "Hidden State Update",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 267,
+    "slug": "gru-cell",
+    "title": "GRU Cell",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 268,
+    "slug": "gru-full-network",
+    "title": "Complete GRU",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 269,
+    "slug": "alexnet-conv-layers",
+    "title": "Convolutional Layers",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 270,
+    "slug": "alexnet-relu",
+    "title": "ReLU Activation",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 271,
+    "slug": "alexnet-dropout",
+    "title": "Dropout Regularization",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 272,
+    "slug": "alexnet-lrn",
+    "title": "Local Response Normalization",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 273,
+    "slug": "alexnet-pooling",
+    "title": "Overlapping Max Pooling",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 274,
+    "slug": "alexnet-augmentation",
+    "title": "Data Augmentation",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 275,
+    "slug": "ddpm-forward",
+    "title": "Forward Diffusion",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 276,
+    "slug": "ddpm-reverse",
+    "title": "Reverse Process",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 277,
+    "slug": "ddpm-schedule",
+    "title": "Noise Schedule",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 278,
+    "slug": "ddpm-loss",
+    "title": "Training Objective",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 279,
+    "slug": "ddpm-sampling",
+    "title": "Sampling Algorithm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 280,
+    "slug": "llama-rmsnorm",
+    "title": "RMSNorm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 281,
+    "slug": "llama-rope",
+    "title": "Rotary Positional Embeddings",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 282,
+    "slug": "llama-rope-freqs",
+    "title": "RoPE Frequency Table",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 283,
+    "slug": "llama-gqa",
+    "title": "Grouped Query Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 284,
+    "slug": "llama-kv-repeat",
+    "title": "KV Head Repeat",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 285,
+    "slug": "llama-swiglu",
+    "title": "SwiGLU FFN",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 286,
+    "slug": "llama-block",
+    "title": "Transformer Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 287,
+    "slug": "llama-forward",
+    "title": "Full Forward Pass",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 288,
+    "slug": "gemma3-sliding-window",
+    "title": "Sliding Window Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 289,
+    "slug": "gemma3-layer-routing",
+    "title": "Global vs Local Layer Routing",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 290,
+    "slug": "gemma3-qk-norm",
+    "title": "QK-Norm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 291,
+    "slug": "gemma3-attention-block",
+    "title": "Gemma 3 Attention Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 292,
+    "slug": "gemma3-full-block",
+    "title": "Full Gemma 3 Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 293,
+    "slug": "gpt2-bpe-training",
+    "title": "BPE Training",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 294,
+    "slug": "gpt2-bpe-encode-decode",
+    "title": "BPE Encode/Decode",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 295,
+    "slug": "gpt2-embedding",
+    "title": "Token + Position Embedding",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 296,
+    "slug": "gpt2-attention",
+    "title": "Scaled Dot-Product Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 297,
+    "slug": "gpt2-causal-attention",
+    "title": "Causal Masked Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 298,
+    "slug": "gpt2-mha",
+    "title": "Multi-Head Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 299,
+    "slug": "gpt2-gelu",
+    "title": "GELU Activation",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 300,
+    "slug": "gpt2-layernorm",
+    "title": "Layer Normalization",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 301,
+    "slug": "gpt2-ffn",
+    "title": "Feed-Forward Network",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 302,
+    "slug": "gpt2-decoder-block",
+    "title": "Decoder Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 303,
+    "slug": "gpt2-init-scaling",
+    "title": "Residual Weight Scaling",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 304,
+    "slug": "gpt2-forward",
+    "title": "Full Forward Pass",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 305,
+    "slug": "gpt2-greedy-decode",
+    "title": "Greedy Decoding",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 306,
+    "slug": "gpt2-topk-sampling",
+    "title": "Top-k Sampling",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 307,
+    "slug": "ds3-kv-compress",
+    "title": "KV Compression",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 308,
+    "slug": "ds3-kv-reconstruct",
+    "title": "KV Reconstruction",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 309,
+    "slug": "ds3-decoupled-rope",
+    "title": "Decoupled RoPE",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 310,
+    "slug": "ds3-mla",
+    "title": "Multi-head Latent Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 311,
+    "slug": "ds3-moe-router",
+    "title": "MoE Router",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 312,
+    "slug": "ds3-shared-expert",
+    "title": "Shared Expert",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 313,
+    "slug": "ds3-load-balance",
+    "title": "Load Balancing",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 314,
+    "slug": "ds3-sparse-moe-ffn",
+    "title": "Sparse MoE FFN",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 315,
+    "slug": "ds3-dense-prefix",
+    "title": "Dense Prefix Layers",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 316,
+    "slug": "ds3-mtp",
+    "title": "Multi-Token Prediction",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 317,
+    "slug": "ds3-block",
+    "title": "Transformer Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 318,
+    "slug": "ds3-forward",
+    "title": "Full Forward Pass",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 319,
+    "slug": "at-gated-attn",
+    "title": "Gated Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 320,
+    "slug": "at-sigmoid-router",
+    "title": "Sigmoid MoE Router",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 321,
+    "slug": "at-smebu",
+    "title": "SMEBU Load Balancing",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 322,
+    "slug": "at-sandwich-norm",
+    "title": "Sandwich Norm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 323,
+    "slug": "at-nope",
+    "title": "NoPE Layer",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 324,
+    "slug": "at-interleaved",
+    "title": "Interleaved RoPE + NoPE",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 325,
+    "slug": "at-coarse-moe",
+    "title": "Coarse-Grained MoE FFN",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 326,
+    "slug": "at-block",
+    "title": "Transformer Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 327,
+    "slug": "at-forward",
+    "title": "Full Forward Pass",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 328,
+    "slug": "gpto-attention-sinks",
+    "title": "Attention Sinks",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 329,
+    "slug": "gpto-yarn-rope",
+    "title": "YaRN RoPE",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 330,
+    "slug": "gpto-sliding-window-mask",
+    "title": "Sliding Window",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 331,
+    "slug": "gpto-gqa-attention",
+    "title": "GQA Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 332,
+    "slug": "gpto-mxfp4-dequant",
+    "title": "MXFP4 Dequant",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 333,
+    "slug": "gpto-moe-routing",
+    "title": "MoE Router",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 334,
+    "slug": "gpto-moe-forward",
+    "title": "MoE Forward",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 335,
+    "slug": "gpto-block",
+    "title": "Transformer Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 336,
+    "slug": "gpto-forward",
+    "title": "Full Forward",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 337,
+    "slug": "glm-rmsnorm",
+    "title": "RMSNorm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 338,
+    "slug": "glm-rope-freqs",
+    "title": "RoPE Freqs",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 339,
+    "slug": "glm-partial-rope",
+    "title": "Partial RoPE",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 340,
+    "slug": "glm-qk-norm",
+    "title": "QK Norm",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 341,
+    "slug": "glm-gqa-attention",
+    "title": "GQA Attention",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 342,
+    "slug": "glm-swiglu",
+    "title": "Dense SwiGLU",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 343,
+    "slug": "glm-group-router",
+    "title": "Group Router",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 344,
+    "slug": "glm-shared-expert",
+    "title": "Shared Expert",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 345,
+    "slug": "glm-moe-forward",
+    "title": "MoE Forward",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 346,
+    "slug": "glm-mtp",
+    "title": "MTP Head",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 347,
+    "slug": "glm-block",
+    "title": "Transformer Block",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  },
+  {
+    "id": 348,
+    "slug": "glm-forward",
+    "title": "Full Forward",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "difficulty": "Medium"
+  }
+];

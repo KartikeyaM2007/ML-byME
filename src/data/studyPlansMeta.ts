@@ -1,0 +1,211 @@
+export type StudyPlanMeta = {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  gradient: string;
+  difficulty: string;
+  accentColor: string;
+  category: string;
+  estimatedDays: number;
+  problemCount: number;
+};
+
+export const studyPlansMeta: StudyPlanMeta[] = [
+  {
+    "id": "cracking-dl",
+    "title": "Cracking Deep Learning",
+    "subtitle": "35 Deep Learning Problems",
+    "description": "From perceptrons to transformers. Implement the architectures, loss functions, and training techniques that define \n  modern deep learning.",
+    "icon": "⚡",
+    "gradient": "from-violet-500/20 via-purple-600/10 to-fuchsia-500/20",
+    "difficulty": "Advanced",
+    "accentColor": "violet",
+    "category": "Cracking",
+    "estimatedDays": 45,
+    "problemCount": 35
+  },
+  {
+    "id": "cracking-nlp",
+    "title": "Cracking NLP",
+    "subtitle": "35 NLP and Language Model Problems",
+    "description": "Master natural language processing from tokenization to large language models. Build the skills for NLP-focused ML     \n  interviews.",
+    "icon": "📝",
+    "gradient": "from-blue-500/20 via-indigo-600/10 to-violet-500/20",
+    "difficulty": "Advanced",
+    "accentColor": "blue",
+    "category": "Cracking",
+    "estimatedDays": 35,
+    "problemCount": 35
+  },
+  {
+    "id": "math-linear-algebra",
+    "title": "Linear Algebra",
+    "subtitle": "The Language of ML",
+    "description": "Master vectors, matrices, and transformations. The essential mathematical foundation for understanding how ML\n  algorithms work under the hood.",
+    "icon": "📐",
+    "gradient": "from-violet-500/20 via-purple-500/10 to-indigo-500/20",
+    "difficulty": "Intermediate",
+    "accentColor": "violet",
+    "category": "ML Math",
+    "estimatedDays": 20,
+    "problemCount": 30
+  },
+  {
+    "id": "math-probability",
+    "title": "Probability & Statistics",
+    "subtitle": "Reasoning Under Uncertainty",
+    "description": "From descriptive statistics to hypothesis testing and Bayesian inference. Build the probabilistic thinking required for\n   modern ML and statistical learning.",
+    "icon": "🎲",
+    "gradient": "from-rose-500/20 via-pink-500/10 to-fuchsia-500/20",
+    "difficulty": "Intermediate",
+    "accentColor": "rose",
+    "category": "ML Math",
+    "estimatedDays": 20,
+    "problemCount": 30
+  },
+  {
+    "id": "numpy-basics",
+    "title": "NumPy Sheet",
+    "subtitle": "Array Computing from Scratch",
+    "description": "Build a solid foundation in NumPy for scientific computing. From array creation to advanced broadcasting and linear    \n  algebra operations.",
+    "icon": "🔢",
+    "gradient": "from-indigo-500/20 via-blue-500/10 to-cyan-500/20",
+    "difficulty": "Beginner",
+    "accentColor": "indigo",
+    "category": "Foundations",
+    "estimatedDays": 15,
+    "problemCount": 25
+  },
+  {
+    "id": "pandas-basics",
+    "title": "Pandas Sheet",
+    "subtitle": "Data Manipulation Essentials",
+    "description": "Master the Pandas library for data analysis. Learn to load, clean, transform, and analyze datasets with the most popular \n  Python data tool.",
+    "icon": "🐼",
+    "gradient": "from-sky-500/20 via-blue-500/10 to-indigo-500/20",
+    "difficulty": "Beginner",
+    "accentColor": "sky",
+    "category": "Foundations",
+    "estimatedDays": 15,
+    "problemCount": 25
+  },
+  {
+    "id": "pytorch-basics",
+    "title": "PyTorch Sheet",
+    "subtitle": "Tensors, Autograd, and Models",
+    "description": "Get started with PyTorch for deep learning. Understand tensors, automatic differentiation, and how to build and train    \n  neural networks.",
+    "icon": "🔥",
+    "gradient": "from-orange-500/20 via-red-500/10 to-rose-500/20",
+    "difficulty": "Beginner",
+    "accentColor": "orange",
+    "category": "Foundations",
+    "estimatedDays": 18,
+    "problemCount": 30
+  },
+  {
+    "id": "sql-basics",
+    "title": "SQL Sheet",
+    "subtitle": "Query Data Like a Pro",
+    "description": "Learn SQL through practical data science queries. From SELECT basics to window functions and CTEs used in real ML data \n  pipelines.",
+    "icon": "🗄️ ",
+    "gradient": "from-orange-600/20 via-amber-700/10 to-stone-500/20",
+    "difficulty": "Beginner",
+    "accentColor": "orange",
+    "category": "Foundations",
+    "estimatedDays": 15,
+    "problemCount": 25
+  },
+  {
+    "id": "cracking-rl",
+    "title": "Cracking RL",
+    "subtitle": "30 Reinforcement Learning problems",
+    "description": "From dynamic programming and tabular methods to PPO, DPO, and GRPO. Thirty implement-from-scratch problems covering the math behind every major RL algorithm.",
+    "icon": "🎮",
+    "gradient": "from-emerald-700/20 via-green-700/10 to-teal-700/20",
+    "difficulty": "Advanced",
+    "accentColor": "#047857",
+    "category": "cracking",
+    "estimatedDays": 35,
+    "problemCount": 30
+  },
+  {
+    "id": "math-calculus",
+    "title": "Calculus for ML",
+    "subtitle": "Derivatives, Gradients, Optimization",
+    "description": "From limits to multivariable calculus. Understand the math behind gradient descent, backpropagation, and optimization\n  in neural networks.",
+    "icon": "📈",
+    "gradient": "from-amber-500/20 via-yellow-500/10 to-orange-500/20",
+    "difficulty": "Intermediate",
+    "accentColor": "amber",
+    "category": "ML Math",
+    "estimatedDays": 15,
+    "problemCount": 30
+  },
+  {
+    "id": "math-optimization",
+    "title": "Optimization",
+    "subtitle": "Finding Optimal Solutions",
+    "description": "Study the optimization algorithms that power ML training. From vanilla gradient descent to Adam, schedulers, and\n  convergence analysis.",
+    "icon": "🎯",
+    "gradient": "from-teal-500/20 via-emerald-500/10 to-green-500/20",
+    "difficulty": "Intermediate",
+    "accentColor": "teal",
+    "category": "ML Math",
+    "estimatedDays": 14,
+    "problemCount": 25
+  },
+  {
+    "id": "cracking-ml",
+    "title": "Cracking ML",
+    "subtitle": "35 Machine Learning Problems",
+    "description": "The definitive set of 35 machine learning problems for ML engineer interviews. All NumPy from scratch, no sklearn/PyTorch. Covers linear models, classification, trees, unsupervised learning, evaluation, and feature engineering.",
+    "icon": "🧠",
+    "gradient": "from-yellow-400/20 via-amber-500/10 to-orange-400/20",
+    "difficulty": "Advanced",
+    "accentColor": "yellow",
+    "category": "Cracking",
+    "estimatedDays": 35,
+    "problemCount": 35
+  },
+  {
+    "id": "cracking-cv",
+    "title": "Cracking CV",
+    "subtitle": "Computer Vision Problems",
+    "description": "",
+    "icon": "👁️",
+    "gradient": "from-cyan-500/20 via-sky-600/10 to-blue-500/20",
+    "difficulty": "Advanced",
+    "accentColor": "cyan",
+    "category": "Cracking",
+    "estimatedDays": 35,
+    "problemCount": 35
+  },
+  {
+    "id": "cuda-basics",
+    "title": "CUDA Kernels",
+    "subtitle": "Program GPUs from first principles",
+    "description": "Write CUDA C++ kernels and run them against correctness tests on real GPU hardware.",
+    "icon": "🖥️",
+    "gradient": "from-green-500/20 to-emerald-500/5",
+    "difficulty": "Intermediate",
+    "accentColor": "#76B900",
+    "category": "GPU Programming",
+    "estimatedDays": 7,
+    "problemCount": 35
+  },
+  {
+    "id": "triton-basics",
+    "title": "Triton Kernels",
+    "subtitle": "Write block-level GPU kernels in Python",
+    "description": "Author Triton kernels - vector ops, fused reductions, tiled matmul, layernorm, and FlashAttention - and run them against torch references on real GPU hardware.",
+    "icon": "Triangle",
+    "gradient": "from-violet-500/20 to-fuchsia-500/5",
+    "difficulty": "Intermediate",
+    "accentColor": "#A78BFA",
+    "category": "GPU Programming",
+    "estimatedDays": 7,
+    "problemCount": 30
+  }
+];

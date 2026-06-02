@@ -1,0 +1,1 @@
+const cheerio = require('cheerio'); const fs = require('fs'); const html = fs.readFileSync('problem_dump.html', 'utf8'); const $ = cheerio.load(html); console.log($('body').text().substring(0, 500).replace(/\s+/g, ' '));

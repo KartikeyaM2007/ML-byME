@@ -1,0 +1,11 @@
+const cheerio = require('cheerio');
+const fs = require('fs');
+const html = fs.readFileSync('problems_page_dump.html', 'utf8');
+const $ = cheerio.load(html);
+console.log('H1:', $('h1').text());
+console.log('Links:', $('a').length);
+console.log('Scripts:', $('script').length);
+console.log('Title:', $('title').text());
+const text = $('body').text();
+console.log('Welcome back?', text.includes('Welcome back'));
+console.log('policy-gradient-loss?', text.includes('policy-gradient-loss'));

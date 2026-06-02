@@ -1,0 +1,47 @@
+/* Hide dead Three.js placeholders from scraped HTML; show our terrain canvas */
+.home-content canvas[data-engine="three.js"],
+.home-content main > div.fixed.inset-0.z-\[-1\] {
+  display: none !important;
+}
+
+.home-shell .terrain-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+}
+
+.home-content main {
+  background: transparent !important;
+}
+
+.home-content .bg-brand-dark {
+  background: transparent !important;
+}
+
+.home-content [class*="mask-image"] {
+  display: none !important;
+}
+
+.home-content h1 span.bg-clip-text,
+.home-content h1 .text-transparent {
+  background-image: linear-gradient(90deg, #00ff94, #34d399, #60a5fa) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+.home-content button.primary-nav,
+.home-content [data-nav] {
+  cursor: pointer;
+}

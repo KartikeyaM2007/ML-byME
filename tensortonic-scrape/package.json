@@ -1,0 +1,13 @@
+{
+  "name": "tensortonic-scrape",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "scrape": "node scrape.js",
+    "grep": "node grep-assets.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "playwright": "^1.52.0"
+  }
+}

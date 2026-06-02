@@ -1,0 +1,38 @@
+{
+  "canvases": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "engine": "three.js r181",
+      "className": "",
+      "parentClass": ""
+    },
+    {
+      "w": 1920,
+      "h": 1080,
+      "engine": "three.js r181",
+      "className": "",
+      "parentClass": ""
+    }
+  ],
+  "scripts": [
+    "https://www.tensortonic.com/_next/static/chunks/fd9d1056-8a2ce3e0f8908328.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/52117-083e42185f07a661.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/main-app-bd208e2f5f0cbb35.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/bd904a5c-8d8d3877d4a399e3.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/b536a0f1-2ea30e7c1b6f9da2.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/c15bf2b0-b465d93bae0b36f3.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/72972-189eb9293117d351.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/40185-8c9c98746f203ed2.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/36496-7095f3c51a63421e.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/33145-2dd6e784d9b0c842.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/79013-8c723594af27ebb3.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/9372-9697d253a8f78a7c.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/app/(main)/page-eebc86111df6bb2b.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/29763-09f2ffb247157b93.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/14438-9c4f4c81eba92c76.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/app/layout-92c3a9781c5ec857.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/polyfills-42372ed130431b0a.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6",
+    "https://www.tensortonic.com/_next/static/chunks/webpack-ad678941b11aef11.js?dpl=dpl_AT1deH8gJkhdnt9MF696aqcS8fN6"
+  ]
+}

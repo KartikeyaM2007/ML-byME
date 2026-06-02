@@ -1,0 +1,2666 @@
+[
+  {
+    "slug": "transformers-tokenization",
+    "url": "https://www.tensortonic.com/problems/transformers-tokenization",
+    "title": "Transformer Tokenization",
+    "difficulty": "Medium",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement **tokenization** for a Transformer: convert raw text into a 1D NumPy array of token IDs.\n\nImplement `tokenize(text, vocab, unk_id=0)`:\n- Strip leading/trailing whitespace\n- Split on whitespace\n- Map each token with `vocab: dict[str, int]`; unknown tokens → `unk_id`\n- Return `np.ndarray` dtype `int32`",
+    "examples": "**Example 1:** `\"hello world\"`, vocab `{\"hello\":1,\"world\":2}` → `[1,2]`\n\n**Example 2:** `\"hello there\"`, unk_id=0 → `[1,0]`",
+    "starterCode": "import numpy as np\n\ndef tokenize(text: str, vocab: dict[str, int], unk_id: int = 0) -> np.ndarray:\n    \"\"\"Convert text to token IDs; OOV -> unk_id.\"\"\"\n    pass\n",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-embedding",
+    "url": "https://www.tensortonic.com/problems/transformers-embedding",
+    "title": "Token Embedding Layer",
+    "difficulty": "Medium",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement the **embedding lookup** layer. Given `token_ids` of shape `(batch, seq_len)` and embedding matrix `E` of shape `(vocab_size, d_model)`, return shape `(batch, seq_len, d_model)`.",
+    "starterCode": "import numpy as np\n\ndef embed(token_ids: np.ndarray, embedding_matrix: np.ndarray) -> np.ndarray:\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-positional-encoding",
+    "url": "https://www.tensortonic.com/problems/transformers-positional-encoding",
+    "title": "Sinusoidal Positional Encoding",
+    "difficulty": "Medium",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement **sinusoidal positional encodings** (Attention Is All You Need). Return array shape `(seq_len, d_model)`.",
+    "starterCode": "import numpy as np\n\ndef positional_encoding(seq_len: int, d_model: int) -> np.ndarray:\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-attention",
+    "url": "https://www.tensortonic.com/problems/transformers-attention",
+    "title": "Scaled Dot-Product Attention",
+    "difficulty": "Hard",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement **scaled dot-product attention**: `Attention(Q,K,V) = softmax(QK^T / sqrt(d_k)) V`.",
+    "starterCode": "import numpy as np\n\ndef scaled_dot_product_attention(Q: np.ndarray, K: np.ndarray, V: np.ndarray) -> np.ndarray:\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-multi-head-attention",
+    "url": "https://www.tensortonic.com/problems/transformers-multi-head-attention",
+    "title": "Multi-Head Attention",
+    "difficulty": "Hard",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement **multi-head attention** with `num_heads` parallel attention operations and output projection.",
+    "starterCode": "import numpy as np\n\ndef multi_head_attention(x, num_heads, W_q, W_k, W_v, W_o):\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-feed-forward",
+    "url": "https://www.tensortonic.com/problems/transformers-feed-forward",
+    "title": "Position-wise Feed-Forward Network",
+    "difficulty": "Medium",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement the **position-wise FFN**: `FFN(x) = ReLU(xW1+b1)W2+b2` applied independently at each sequence position.",
+    "starterCode": "import numpy as np\n\ndef positionwise_ffn(x, W1, b1, W2, b2):\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-layer-normalization",
+    "url": "https://www.tensortonic.com/problems/transformers-layer-normalization",
+    "title": "Layer Normalization",
+    "difficulty": "Medium",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement **layer normalization** over the last dimension with learnable `gamma` and `beta`.",
+    "starterCode": "import numpy as np\n\ndef layer_norm(x, gamma, beta, eps=1e-5):\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "transformers-encoder-block",
+    "url": "https://www.tensortonic.com/problems/transformers-encoder-block",
+    "title": "Transformer Encoder Block",
+    "difficulty": "Hard",
+    "categories": [
+      "Transformers",
+      "NLP"
+    ],
+    "prompt": "Implement one **Transformer encoder block** (self-attention + FFN + residuals + layer norm).",
+    "starterCode": "import numpy as np\n\ndef encoder_block(x, self_attn, ffn, ln_params):\n    pass\n",
+    "examples": "",
+    "hints": "Check tensor shapes at each step.",
+    "requirements": "Use NumPy only unless stated otherwise. Vectorize when possible.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-identity-block",
+    "title": "Identity Block",
+    "url": "https://www.tensortonic.com/problems/resnet-identity-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Identity Block (from Deep Residual Learning)\n\nBasic residual connection with no dimension change\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Identity Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-conv-block",
+    "title": "Convolutional Block",
+    "url": "https://www.tensortonic.com/problems/resnet-conv-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Convolutional Block (from Deep Residual Learning)\n\nResidual with 1x1 projection for dimension matching\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Convolutional Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-bottleneck",
+    "title": "Bottleneck Architecture",
+    "url": "https://www.tensortonic.com/problems/resnet-bottleneck",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Bottleneck Architecture (from Deep Residual Learning)\n\n1×1 → 3×3 → 1×1 compression pattern\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Bottleneck Architecture\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-skip-connection",
+    "title": "Skip Connection Mechanics",
+    "url": "https://www.tensortonic.com/problems/resnet-skip-connection",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Skip Connection Mechanics (from Deep Residual Learning)\n\nGradient flow through shortcuts\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Skip Connection Mechanics\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-batch-norm",
+    "title": "BatchNorm in ResNet",
+    "url": "https://www.tensortonic.com/problems/resnet-batch-norm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## BatchNorm in ResNet (from Deep Residual Learning)\n\nPre-activation vs post-activation ordering\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: BatchNorm in ResNet\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "resnet-full-network",
+    "title": "Full ResNet Assembly",
+    "url": "https://www.tensortonic.com/problems/resnet-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full ResNet Assembly (from Deep Residual Learning)\n\nCombining blocks into ResNet-18/34 structure\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full ResNet Assembly\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-wordpiece",
+    "title": "WordPiece Tokenization",
+    "url": "https://www.tensortonic.com/problems/bert-wordpiece",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## WordPiece Tokenization (from BERT: Pre-training of Deep Bidirectional Transformers)\n\nSubword tokenization with ## prefix\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: WordPiece Tokenization\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-segment-embedding",
+    "title": "Segment Embeddings",
+    "url": "https://www.tensortonic.com/problems/bert-segment-embedding",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Segment Embeddings (from BERT: Pre-training of Deep Bidirectional Transformers)\n\nToken type IDs for sentence pairs\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Segment Embeddings\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-masked-lm",
+    "title": "Masked Language Modeling",
+    "url": "https://www.tensortonic.com/problems/bert-masked-lm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Masked Language Modeling (from BERT: Pre-training of Deep Bidirectional Transformers)\n\n15% masking with 80-10-10 strategy\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Masked Language Modeling\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-nsp",
+    "title": "Next Sentence Prediction",
+    "url": "https://www.tensortonic.com/problems/bert-nsp",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Next Sentence Prediction (from BERT: Pre-training of Deep Bidirectional Transformers)\n\nBinary classification pre-training task\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Next Sentence Prediction\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-pooler",
+    "title": "BERT Pooler",
+    "url": "https://www.tensortonic.com/problems/bert-pooler",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## BERT Pooler (from BERT: Pre-training of Deep Bidirectional Transformers)\n\n[CLS] token extraction for classification\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: BERT Pooler\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "bert-fine-tuning",
+    "title": "Fine-tuning Architecture",
+    "url": "https://www.tensortonic.com/problems/bert-fine-tuning",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Fine-tuning Architecture (from BERT: Pre-training of Deep Bidirectional Transformers)\n\nAdding task-specific heads\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Fine-tuning Architecture\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-conv-block",
+    "title": "VGG Conv Block",
+    "url": "https://www.tensortonic.com/problems/vgg-conv-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VGG Conv Block (from Very Deep Convolutional Networks)\n\nStacked 3×3 convolutions with ReLU\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VGG Conv Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-maxpool",
+    "title": "VGG Max Pooling",
+    "url": "https://www.tensortonic.com/problems/vgg-maxpool",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VGG Max Pooling (from Very Deep Convolutional Networks)\n\n2×2 max pooling with stride 2\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VGG Max Pooling\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-classifier",
+    "title": "VGG Classifier Head",
+    "url": "https://www.tensortonic.com/problems/vgg-classifier",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VGG Classifier Head (from Very Deep Convolutional Networks)\n\nFC layers: 4096-4096-1000\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VGG Classifier Head\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-config",
+    "title": "VGG Configuration",
+    "url": "https://www.tensortonic.com/problems/vgg-config",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VGG Configuration (from Very Deep Convolutional Networks)\n\nVGG-11, VGG-16, VGG-19 variants\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VGG Configuration\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-feature-extractor",
+    "title": "VGG Feature Extractor",
+    "url": "https://www.tensortonic.com/problems/vgg-feature-extractor",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VGG Feature Extractor (from Very Deep Convolutional Networks)\n\nComplete conv backbone\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VGG Feature Extractor\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vgg-full-network",
+    "title": "Complete VGG Network",
+    "url": "https://www.tensortonic.com/problems/vgg-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete VGG Network (from Very Deep Convolutional Networks)\n\nEnd-to-end classification\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete VGG Network\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-encoder-block",
+    "title": "U-Net Encoder Block",
+    "url": "https://www.tensortonic.com/problems/unet-encoder-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## U-Net Encoder Block (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\nDouble conv + max pool downsampling\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: U-Net Encoder Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-decoder-block",
+    "title": "U-Net Decoder Block",
+    "url": "https://www.tensortonic.com/problems/unet-decoder-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## U-Net Decoder Block (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\nUp-conv + concat + double conv\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: U-Net Decoder Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-skip-connection",
+    "title": "U-Net Skip Connections",
+    "url": "https://www.tensortonic.com/problems/unet-skip-connection",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## U-Net Skip Connections (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\nCenter crop + concatenate\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: U-Net Skip Connections\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-bottleneck",
+    "title": "U-Net Bottleneck",
+    "url": "https://www.tensortonic.com/problems/unet-bottleneck",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## U-Net Bottleneck (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\nBridge at lowest resolution\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: U-Net Bottleneck\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-output-layer",
+    "title": "U-Net Output Layer",
+    "url": "https://www.tensortonic.com/problems/unet-output-layer",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## U-Net Output Layer (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\n1×1 conv for pixel-wise classification\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: U-Net Output Layer\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "unet-full-network",
+    "title": "Complete U-Net",
+    "url": "https://www.tensortonic.com/problems/unet-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete U-Net (from U-Net: Convolutional Networks for Biomedical Image Segmentation)\n\nFull encoder-decoder architecture\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete U-Net\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-encoder",
+    "title": "VAE Encoder",
+    "url": "https://www.tensortonic.com/problems/vae-encoder",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VAE Encoder (from Auto-Encoding Variational Bayes (VAE))\n\nMap input to distribution params\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VAE Encoder\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-reparameterization",
+    "title": "Reparameterization Trick",
+    "url": "https://www.tensortonic.com/problems/vae-reparameterization",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Reparameterization Trick (from Auto-Encoding Variational Bayes (VAE))\n\nEnable backprop through sampling\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Reparameterization Trick\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-decoder",
+    "title": "VAE Decoder",
+    "url": "https://www.tensortonic.com/problems/vae-decoder",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## VAE Decoder (from Auto-Encoding Variational Bayes (VAE))\n\nReconstruct from latent\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: VAE Decoder\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-kl-divergence",
+    "title": "KL Divergence",
+    "url": "https://www.tensortonic.com/problems/vae-kl-divergence",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## KL Divergence (from Auto-Encoding Variational Bayes (VAE))\n\nRegularize latent space\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: KL Divergence\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-elbo-loss",
+    "title": "ELBO Loss",
+    "url": "https://www.tensortonic.com/problems/vae-elbo-loss",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## ELBO Loss (from Auto-Encoding Variational Bayes (VAE))\n\nReconstruct + KL objective\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: ELBO Loss\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vae-full-network",
+    "title": "Complete VAE",
+    "url": "https://www.tensortonic.com/problems/vae-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete VAE (from Auto-Encoding Variational Bayes (VAE))\n\nFull encoder-decoder pipeline\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete VAE\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-generator",
+    "title": "Generator",
+    "url": "https://www.tensortonic.com/problems/gan-generator",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Generator (from Generative Adversarial Networks (GAN))\n\nCreate fake data from noise\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Generator\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-discriminator",
+    "title": "Discriminator",
+    "url": "https://www.tensortonic.com/problems/gan-discriminator",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Discriminator (from Generative Adversarial Networks (GAN))\n\nClassify real vs fake\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Discriminator\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-loss",
+    "title": "GAN Loss Functions",
+    "url": "https://www.tensortonic.com/problems/gan-loss",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## GAN Loss Functions (from Generative Adversarial Networks (GAN))\n\nAdversarial objectives\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: GAN Loss Functions\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-training-loop",
+    "title": "Training Loop",
+    "url": "https://www.tensortonic.com/problems/gan-training-loop",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Training Loop (from Generative Adversarial Networks (GAN))\n\nAlternating optimization\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Training Loop\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-mode-collapse",
+    "title": "Mode Collapse",
+    "url": "https://www.tensortonic.com/problems/gan-mode-collapse",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Mode Collapse (from Generative Adversarial Networks (GAN))\n\nDetect diversity issues\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Mode Collapse\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gan-full-network",
+    "title": "Complete GAN",
+    "url": "https://www.tensortonic.com/problems/gan-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete GAN (from Generative Adversarial Networks (GAN))\n\nFull adversarial system\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete GAN\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-patch-embedding",
+    "title": "Patch Embedding",
+    "url": "https://www.tensortonic.com/problems/vit-patch-embedding",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Patch Embedding (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nSplit image into patches and project them to embeddings\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Patch Embedding\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-position-embedding",
+    "title": "Position Embedding",
+    "url": "https://www.tensortonic.com/problems/vit-position-embedding",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Position Embedding (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nAdd learnable position information to patches\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Position Embedding\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-class-token",
+    "title": "Class Token [CLS]",
+    "url": "https://www.tensortonic.com/problems/vit-class-token",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Class Token [CLS] (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nPrepend learnable classification token\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Class Token [CLS]\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-encoder-block",
+    "title": "ViT Encoder Block",
+    "url": "https://www.tensortonic.com/problems/vit-encoder-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## ViT Encoder Block (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nPre-LN Transformer block with GELU MLP\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: ViT Encoder Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-mlp-head",
+    "title": "Classification Head",
+    "url": "https://www.tensortonic.com/problems/vit-mlp-head",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Classification Head (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nExtract [CLS] and project to classes\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Classification Head\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "vit-full-network",
+    "title": "Complete ViT",
+    "url": "https://www.tensortonic.com/problems/vit-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete ViT (from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale)\n\nFull Vision Transformer forward pass\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete ViT\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-cell",
+    "title": "RNN Cell",
+    "url": "https://www.tensortonic.com/problems/rnn-cell",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## RNN Cell (from Finding Structure in Time (Vanilla RNN))\n\nSingle time step computation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: RNN Cell\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-hidden-state",
+    "title": "Hidden State",
+    "url": "https://www.tensortonic.com/problems/rnn-hidden-state",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Hidden State (from Finding Structure in Time (Vanilla RNN))\n\nMemory that persists across time\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Hidden State\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-forward-sequence",
+    "title": "Forward Through Sequence",
+    "url": "https://www.tensortonic.com/problems/rnn-forward-sequence",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Forward Through Sequence (from Finding Structure in Time (Vanilla RNN))\n\nProcess entire input sequence\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Forward Through Sequence\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-bptt",
+    "title": "Backprop Through Time",
+    "url": "https://www.tensortonic.com/problems/rnn-bptt",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Backprop Through Time (from Finding Structure in Time (Vanilla RNN))\n\nGradient flow across time steps\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Backprop Through Time\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-vanishing-gradients",
+    "title": "Vanishing Gradients",
+    "url": "https://www.tensortonic.com/problems/rnn-vanishing-gradients",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Vanishing Gradients (from Finding Structure in Time (Vanilla RNN))\n\nWhy vanilla RNN forgets\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Vanishing Gradients\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "rnn-full-network",
+    "title": "Complete RNN",
+    "url": "https://www.tensortonic.com/problems/rnn-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete RNN (from Finding Structure in Time (Vanilla RNN))\n\nFull vanilla RNN implementation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete RNN\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-forget-gate",
+    "title": "Forget Gate",
+    "url": "https://www.tensortonic.com/problems/lstm-forget-gate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Forget Gate (from Long Short-Term Memory)\n\nDecides what information to discard\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Forget Gate\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-input-gate",
+    "title": "Input Gate",
+    "url": "https://www.tensortonic.com/problems/lstm-input-gate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Input Gate (from Long Short-Term Memory)\n\nDecides what new information to store\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Input Gate\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-cell-state",
+    "title": "Cell State",
+    "url": "https://www.tensortonic.com/problems/lstm-cell-state",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Cell State (from Long Short-Term Memory)\n\nThe memory highway through time\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Cell State\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-output-gate",
+    "title": "Output Gate",
+    "url": "https://www.tensortonic.com/problems/lstm-output-gate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Output Gate (from Long Short-Term Memory)\n\nDecides what to output\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Output Gate\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-cell",
+    "title": "LSTM Cell",
+    "url": "https://www.tensortonic.com/problems/lstm-cell",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## LSTM Cell (from Long Short-Term Memory)\n\nComplete cell with all gates\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: LSTM Cell\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "lstm-full-network",
+    "title": "Complete LSTM",
+    "url": "https://www.tensortonic.com/problems/lstm-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete LSTM (from Long Short-Term Memory)\n\nFull LSTM network implementation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete LSTM\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-reset-gate",
+    "title": "Reset Gate",
+    "url": "https://www.tensortonic.com/problems/gru-reset-gate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Reset Gate (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nControls how much past to forget\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Reset Gate\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-update-gate",
+    "title": "Update Gate",
+    "url": "https://www.tensortonic.com/problems/gru-update-gate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Update Gate (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nControls blend of old and new\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Update Gate\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-candidate",
+    "title": "Candidate Hidden",
+    "url": "https://www.tensortonic.com/problems/gru-candidate",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Candidate Hidden (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nNew hidden state proposal\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Candidate Hidden\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-hidden-update",
+    "title": "Hidden State Update",
+    "url": "https://www.tensortonic.com/problems/gru-hidden-update",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Hidden State Update (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nInterpolate old and candidate\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Hidden State Update\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-cell",
+    "title": "GRU Cell",
+    "url": "https://www.tensortonic.com/problems/gru-cell",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## GRU Cell (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nComplete cell with both gates\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: GRU Cell\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gru-full-network",
+    "title": "Complete GRU",
+    "url": "https://www.tensortonic.com/problems/gru-full-network",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Complete GRU (from Learning Phrase Representations using RNN Encoder-Decoder (GRU))\n\nFull GRU network implementation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Complete GRU\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-conv-layers",
+    "title": "Convolutional Layers",
+    "url": "https://www.tensortonic.com/problems/alexnet-conv-layers",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Convolutional Layers (from ImageNet Classification with Deep Convolutional Neural Networks)\n\nLarge 11×11 and 5×5 kernels in early layers\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Convolutional Layers\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-relu",
+    "title": "ReLU Activation",
+    "url": "https://www.tensortonic.com/problems/alexnet-relu",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## ReLU Activation (from ImageNet Classification with Deep Convolutional Neural Networks)\n\n6× faster training than tanh\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: ReLU Activation\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-dropout",
+    "title": "Dropout Regularization",
+    "url": "https://www.tensortonic.com/problems/alexnet-dropout",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Dropout Regularization (from ImageNet Classification with Deep Convolutional Neural Networks)\n\nPrevent overfitting with p=0.5\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Dropout Regularization\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-lrn",
+    "title": "Local Response Normalization",
+    "url": "https://www.tensortonic.com/problems/alexnet-lrn",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Local Response Normalization (from ImageNet Classification with Deep Convolutional Neural Networks)\n\nCross-channel normalization\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Local Response Normalization\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-pooling",
+    "title": "Overlapping Max Pooling",
+    "url": "https://www.tensortonic.com/problems/alexnet-pooling",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Overlapping Max Pooling (from ImageNet Classification with Deep Convolutional Neural Networks)\n\n3×3 pooling with stride 2\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Overlapping Max Pooling\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "alexnet-augmentation",
+    "title": "Data Augmentation",
+    "url": "https://www.tensortonic.com/problems/alexnet-augmentation",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Data Augmentation (from ImageNet Classification with Deep Convolutional Neural Networks)\n\nRandom crops, flips, and PCA color\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Data Augmentation\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ddpm-forward",
+    "title": "Forward Diffusion",
+    "url": "https://www.tensortonic.com/problems/ddpm-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Forward Diffusion (from Denoising Diffusion Probabilistic Models)\n\nGradually add Gaussian noise over T steps\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Forward Diffusion\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ddpm-reverse",
+    "title": "Reverse Process",
+    "url": "https://www.tensortonic.com/problems/ddpm-reverse",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Reverse Process (from Denoising Diffusion Probabilistic Models)\n\nLearn to denoise step by step\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Reverse Process\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ddpm-schedule",
+    "title": "Noise Schedule",
+    "url": "https://www.tensortonic.com/problems/ddpm-schedule",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Noise Schedule (from Denoising Diffusion Probabilistic Models)\n\nLinear and cosine β schedules\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Noise Schedule\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ddpm-loss",
+    "title": "Training Objective",
+    "url": "https://www.tensortonic.com/problems/ddpm-loss",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Training Objective (from Denoising Diffusion Probabilistic Models)\n\nε-prediction and simplified loss\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Training Objective\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ddpm-sampling",
+    "title": "Sampling Algorithm",
+    "url": "https://www.tensortonic.com/problems/ddpm-sampling",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sampling Algorithm (from Denoising Diffusion Probabilistic Models)\n\nIterative denoising from pure noise\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sampling Algorithm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-rmsnorm",
+    "title": "RMSNorm",
+    "url": "https://www.tensortonic.com/problems/llama-rmsnorm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## RMSNorm (from LLaMA)\n\nRoot Mean Square Layer Normalization\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: RMSNorm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-rope",
+    "title": "Rotary Positional Embeddings",
+    "url": "https://www.tensortonic.com/problems/llama-rope",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Rotary Positional Embeddings (from LLaMA)\n\nRoPE position encoding via rotation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Rotary Positional Embeddings\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-rope-freqs",
+    "title": "RoPE Frequency Table",
+    "url": "https://www.tensortonic.com/problems/llama-rope-freqs",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## RoPE Frequency Table (from LLaMA)\n\nPrecompute cos/sin frequency tables\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: RoPE Frequency Table\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-gqa",
+    "title": "Grouped Query Attention",
+    "url": "https://www.tensortonic.com/problems/llama-gqa",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Grouped Query Attention (from LLaMA)\n\nMulti-query attention with shared KV heads\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Grouped Query Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-kv-repeat",
+    "title": "KV Head Repeat",
+    "url": "https://www.tensortonic.com/problems/llama-kv-repeat",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## KV Head Repeat (from LLaMA)\n\nExpand KV heads to match query heads\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: KV Head Repeat\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-swiglu",
+    "title": "SwiGLU FFN",
+    "url": "https://www.tensortonic.com/problems/llama-swiglu",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## SwiGLU FFN (from LLaMA)\n\nGated feedforward with Swish activation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: SwiGLU FFN\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-block",
+    "title": "Transformer Block",
+    "url": "https://www.tensortonic.com/problems/llama-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Transformer Block (from LLaMA)\n\nFull Llama 3 transformer block\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Transformer Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "llama-forward",
+    "title": "Full Forward Pass",
+    "url": "https://www.tensortonic.com/problems/llama-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward Pass (from LLaMA)\n\nComplete Llama 3 model forward pass\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward Pass\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gemma3-sliding-window",
+    "title": "Sliding Window Attention",
+    "url": "https://www.tensortonic.com/problems/gemma3-sliding-window",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sliding Window Attention (from Gemma 3)\n\nLocal attention with fixed window size\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sliding Window Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gemma3-layer-routing",
+    "title": "Global vs Local Layer Routing",
+    "url": "https://www.tensortonic.com/problems/gemma3-layer-routing",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Global vs Local Layer Routing (from Gemma 3)\n\nRoute layers to local or global attention\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Global vs Local Layer Routing\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gemma3-qk-norm",
+    "title": "QK-Norm",
+    "url": "https://www.tensortonic.com/problems/gemma3-qk-norm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## QK-Norm (from Gemma 3)\n\nRMSNorm on Q and K before attention\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: QK-Norm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gemma3-attention-block",
+    "title": "Gemma 3 Attention Block",
+    "url": "https://www.tensortonic.com/problems/gemma3-attention-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Gemma 3 Attention Block (from Gemma 3)\n\nFull Gemma 3 attention with routing and QK-Norm\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Gemma 3 Attention Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gemma3-full-block",
+    "title": "Full Gemma 3 Block",
+    "url": "https://www.tensortonic.com/problems/gemma3-full-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Gemma 3 Block (from Gemma 3)\n\nComplete Gemma 3 transformer block\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Gemma 3 Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-bpe-training",
+    "title": "BPE Training",
+    "url": "https://www.tensortonic.com/problems/gpt2-bpe-training",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## BPE Training (from GPT-2)\n\nByte Pair Encoding training algorithm\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: BPE Training\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-bpe-encode-decode",
+    "title": "BPE Encode/Decode",
+    "url": "https://www.tensortonic.com/problems/gpt2-bpe-encode-decode",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## BPE Encode/Decode (from GPT-2)\n\nBPE encoding and decoding\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: BPE Encode/Decode\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-embedding",
+    "title": "Token + Position Embedding",
+    "url": "https://www.tensortonic.com/problems/gpt2-embedding",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Token + Position Embedding (from GPT-2)\n\nCombined token and learned positional embedding\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Token + Position Embedding\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-attention",
+    "title": "Scaled Dot-Product Attention",
+    "url": "https://www.tensortonic.com/problems/gpt2-attention",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Scaled Dot-Product Attention (from GPT-2)\n\nCore attention computation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Scaled Dot-Product Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-causal-attention",
+    "title": "Causal Masked Attention",
+    "url": "https://www.tensortonic.com/problems/gpt2-causal-attention",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Causal Masked Attention (from GPT-2)\n\nAttention with causal mask for autoregressive decoding\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Causal Masked Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-mha",
+    "title": "Multi-Head Attention",
+    "url": "https://www.tensortonic.com/problems/gpt2-mha",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Multi-Head Attention (from GPT-2)\n\nMulti-head causal self-attention\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Multi-Head Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-gelu",
+    "title": "GELU Activation",
+    "url": "https://www.tensortonic.com/problems/gpt2-gelu",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## GELU Activation (from GPT-2)\n\nGaussian Error Linear Unit activation function\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: GELU Activation\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-layernorm",
+    "title": "Layer Normalization",
+    "url": "https://www.tensortonic.com/problems/gpt2-layernorm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Layer Normalization (from GPT-2)\n\nPre-norm layer normalization\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Layer Normalization\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-ffn",
+    "title": "Feed-Forward Network",
+    "url": "https://www.tensortonic.com/problems/gpt2-ffn",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Feed-Forward Network (from GPT-2)\n\nPosition-wise FFN with GELU\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Feed-Forward Network\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-decoder-block",
+    "title": "Decoder Block",
+    "url": "https://www.tensortonic.com/problems/gpt2-decoder-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Decoder Block (from GPT-2)\n\nFull pre-norm transformer decoder block\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Decoder Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-init-scaling",
+    "title": "Residual Weight Scaling",
+    "url": "https://www.tensortonic.com/problems/gpt2-init-scaling",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Residual Weight Scaling (from GPT-2)\n\nInitialization scaling for deep residual networks\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Residual Weight Scaling\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-forward",
+    "title": "Full Forward Pass",
+    "url": "https://www.tensortonic.com/problems/gpt2-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward Pass (from GPT-2)\n\nComplete GPT-2 forward pass\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward Pass\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-greedy-decode",
+    "title": "Greedy Decoding",
+    "url": "https://www.tensortonic.com/problems/gpt2-greedy-decode",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Greedy Decoding (from GPT-2)\n\nAutoregressive greedy generation\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Greedy Decoding\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpt2-topk-sampling",
+    "title": "Top-k Sampling",
+    "url": "https://www.tensortonic.com/problems/gpt2-topk-sampling",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Top-k Sampling (from GPT-2)\n\nTemperature scaling and top-k sampling\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Top-k Sampling\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-kv-compress",
+    "title": "KV Compression",
+    "url": "https://www.tensortonic.com/problems/ds3-kv-compress",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## KV Compression (from DeepSeek-V3)\n\nLow-rank down-projection for KV cache\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: KV Compression\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-kv-reconstruct",
+    "title": "KV Reconstruction",
+    "url": "https://www.tensortonic.com/problems/ds3-kv-reconstruct",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## KV Reconstruction (from DeepSeek-V3)\n\nUp-project compressed KV back to full size\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: KV Reconstruction\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-decoupled-rope",
+    "title": "Decoupled RoPE",
+    "url": "https://www.tensortonic.com/problems/ds3-decoupled-rope",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Decoupled RoPE (from DeepSeek-V3)\n\nSeparate RoPE for compressed keys\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Decoupled RoPE\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-mla",
+    "title": "Multi-head Latent Attention",
+    "url": "https://www.tensortonic.com/problems/ds3-mla",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Multi-head Latent Attention (from DeepSeek-V3)\n\nFull MLA combining compression and decoupled RoPE\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Multi-head Latent Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-moe-router",
+    "title": "MoE Router",
+    "url": "https://www.tensortonic.com/problems/ds3-moe-router",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MoE Router (from DeepSeek-V3)\n\nTop-k expert selection with gating\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MoE Router\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-shared-expert",
+    "title": "Shared Expert",
+    "url": "https://www.tensortonic.com/problems/ds3-shared-expert",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Shared Expert (from DeepSeek-V3)\n\nAlways-active shared expert mechanism\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Shared Expert\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-load-balance",
+    "title": "Load Balancing",
+    "url": "https://www.tensortonic.com/problems/ds3-load-balance",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Load Balancing (from DeepSeek-V3)\n\nAuxiliary-loss-free load balancing via bias\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Load Balancing\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-sparse-moe-ffn",
+    "title": "Sparse MoE FFN",
+    "url": "https://www.tensortonic.com/problems/ds3-sparse-moe-ffn",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sparse MoE FFN (from DeepSeek-V3)\n\nFull sparse MoE feedforward block\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sparse MoE FFN\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-dense-prefix",
+    "title": "Dense Prefix Layers",
+    "url": "https://www.tensortonic.com/problems/ds3-dense-prefix",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Dense Prefix Layers (from DeepSeek-V3)\n\nFirst N layers use dense FFN before MoE\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Dense Prefix Layers\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-mtp",
+    "title": "Multi-Token Prediction",
+    "url": "https://www.tensortonic.com/problems/ds3-mtp",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Multi-Token Prediction (from DeepSeek-V3)\n\nPredict multiple future tokens simultaneously\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Multi-Token Prediction\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-block",
+    "title": "Transformer Block",
+    "url": "https://www.tensortonic.com/problems/ds3-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Transformer Block (from DeepSeek-V3)\n\nMLA + MoE combined block\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Transformer Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "ds3-forward",
+    "title": "Full Forward Pass",
+    "url": "https://www.tensortonic.com/problems/ds3-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward Pass (from DeepSeek-V3)\n\nComplete DeepSeek V3 forward pass\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward Pass\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-gated-attn",
+    "title": "Gated Attention",
+    "url": "https://www.tensortonic.com/problems/at-gated-attn",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Gated Attention (from Arcee Trinity)\n\nGate projection on attention output\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Gated Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-sigmoid-router",
+    "title": "Sigmoid MoE Router",
+    "url": "https://www.tensortonic.com/problems/at-sigmoid-router",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sigmoid MoE Router (from Arcee Trinity)\n\nSigmoid replaces softmax for expert routing\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sigmoid MoE Router\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-smebu",
+    "title": "SMEBU Load Balancing",
+    "url": "https://www.tensortonic.com/problems/at-smebu",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## SMEBU Load Balancing (from Arcee Trinity)\n\nSoft-clamped momentum expert bias updates\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: SMEBU Load Balancing\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-sandwich-norm",
+    "title": "Sandwich Norm",
+    "url": "https://www.tensortonic.com/problems/at-sandwich-norm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sandwich Norm (from Arcee Trinity)\n\nDepth-scaled pre and post normalization\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sandwich Norm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-nope",
+    "title": "NoPE Layer",
+    "url": "https://www.tensortonic.com/problems/at-nope",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## NoPE Layer (from Arcee Trinity)\n\nAttention without positional encoding\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: NoPE Layer\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-interleaved",
+    "title": "Interleaved RoPE + NoPE",
+    "url": "https://www.tensortonic.com/problems/at-interleaved",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Interleaved RoPE + NoPE (from Arcee Trinity)\n\n3:1 RoPE/NoPE layer pattern\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Interleaved RoPE + NoPE\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-coarse-moe",
+    "title": "Coarse-Grained MoE FFN",
+    "url": "https://www.tensortonic.com/problems/at-coarse-moe",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Coarse-Grained MoE FFN (from Arcee Trinity)\n\nMoE with grouped intermediate dimensions\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Coarse-Grained MoE FFN\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-block",
+    "title": "Transformer Block",
+    "url": "https://www.tensortonic.com/problems/at-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Transformer Block (from Arcee Trinity)\n\nFull Arcee Trinity block assembly\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Transformer Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "at-forward",
+    "title": "Full Forward Pass",
+    "url": "https://www.tensortonic.com/problems/at-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward Pass (from Arcee Trinity)\n\nComplete Arcee Trinity forward pass\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward Pass\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-attention-sinks",
+    "title": "Attention Sinks",
+    "url": "https://www.tensortonic.com/problems/gpto-attention-sinks",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Attention Sinks (from gpt-oss)\n\nLearned per-head scalar added inside the softmax denominator, giving each attention head an escape valve so weights no longer sum to 1.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Attention Sinks\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-yarn-rope",
+    "title": "YaRN RoPE",
+    "url": "https://www.tensortonic.com/problems/gpto-yarn-rope",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## YaRN RoPE (from gpt-oss)\n\nNTK-by-parts inverse frequency scaling that extends RoPE to long contexts.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: YaRN RoPE\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-sliding-window-mask",
+    "title": "Sliding Window",
+    "url": "https://www.tensortonic.com/problems/gpto-sliding-window-mask",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Sliding Window (from gpt-oss)\n\nCausal mask that restricts each query to the previous W tokens, used on alternating attention layers.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Sliding Window\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-gqa-attention",
+    "title": "GQA Attention",
+    "url": "https://www.tensortonic.com/problems/gpto-gqa-attention",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## GQA Attention (from gpt-oss)\n\nForward pass combining grouped-query attention, optional sliding window, and learned softmax sinks.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: GQA Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-mxfp4-dequant",
+    "title": "MXFP4 Dequant",
+    "url": "https://www.tensortonic.com/problems/gpto-mxfp4-dequant",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MXFP4 Dequant (from gpt-oss)\n\nMicroscaling FP4: dequantize 4-bit expert weights using a shared per-block FP8 scale.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MXFP4 Dequant\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-moe-routing",
+    "title": "MoE Router",
+    "url": "https://www.tensortonic.com/problems/gpto-moe-routing",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MoE Router (from gpt-oss)\n\nTop-k expert routing with softmax taken after the top-k selection, not before.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MoE Router\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-moe-forward",
+    "title": "MoE Forward",
+    "url": "https://www.tensortonic.com/problems/gpto-moe-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MoE Forward (from gpt-oss)\n\nSparse MoE forward: route, run clamped-SwiGLU experts, weighted-sum the outputs.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MoE Forward\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-block",
+    "title": "Transformer Block",
+    "url": "https://www.tensortonic.com/problems/gpto-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Transformer Block (from gpt-oss)\n\nPre-norm GPT-OSS block: RMSNorm, GQA attention with sinks plus optional sliding window, residual, RMSNorm, sparse MoE, residual.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Transformer Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "gpto-forward",
+    "title": "Full Forward",
+    "url": "https://www.tensortonic.com/problems/gpto-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward (from gpt-oss)\n\nEmbedding plus stacked GPT-OSS blocks (alternating attention pattern), final RMSNorm, lm head logits.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-rmsnorm",
+    "title": "RMSNorm",
+    "url": "https://www.tensortonic.com/problems/glm-rmsnorm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## RMSNorm (from GLM-4.5)\n\nRoot Mean Square Norm: stable, no-bias normalization used pre-attention and pre-FFN throughout GLM-4.5.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: RMSNorm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-rope-freqs",
+    "title": "RoPE Freqs",
+    "url": "https://www.tensortonic.com/problems/glm-rope-freqs",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## RoPE Freqs (from GLM-4.5)\n\nBase RoPE inverse-frequency table used by GLM-4.5 attention.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: RoPE Freqs\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-partial-rope",
+    "title": "Partial RoPE",
+    "url": "https://www.tensortonic.com/problems/glm-partial-rope",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Partial RoPE (from GLM-4.5)\n\nApply RoPE only to the first rope_dim channels of each head; leave the remaining channels position-free.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Partial RoPE\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-qk-norm",
+    "title": "QK Norm",
+    "url": "https://www.tensortonic.com/problems/glm-qk-norm",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## QK Norm (from GLM-4.5)\n\nNormalize the query and key with RMSNorm before the dot product to stabilize attention logits.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: QK Norm\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-gqa-attention",
+    "title": "GQA Attention",
+    "url": "https://www.tensortonic.com/problems/glm-gqa-attention",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## GQA Attention (from GLM-4.5)\n\nForward pass combining GQA, partial RoPE, and QK-norm before scaled dot-product attention.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: GQA Attention\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-swiglu",
+    "title": "Dense SwiGLU",
+    "url": "https://www.tensortonic.com/problems/glm-swiglu",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Dense SwiGLU (from GLM-4.5)\n\nSwiGLU FFN used in the dense prefix layer of GLM-4.5 (layers before the MoE blocks).\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Dense SwiGLU\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-group-router",
+    "title": "Group Router",
+    "url": "https://www.tensortonic.com/problems/glm-group-router",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Group Router (from GLM-4.5)\n\nGroup-restricted top-k routing: sigmoid scores, pick topk_group groups first, then top-k experts within those.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Group Router\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-shared-expert",
+    "title": "Shared Expert",
+    "url": "https://www.tensortonic.com/problems/glm-shared-expert",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Shared Expert (from GLM-4.5)\n\nAlways-on expert that processes every token, summed with the routed mixture, with a routed scaling factor.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Shared Expert\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-moe-forward",
+    "title": "MoE Forward",
+    "url": "https://www.tensortonic.com/problems/glm-moe-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MoE Forward (from GLM-4.5)\n\nSparse MoE forward combining group-routed top-k, SwiGLU experts, shared expert, and routed_scaling_factor.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MoE Forward\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-mtp",
+    "title": "MTP Head",
+    "url": "https://www.tensortonic.com/problems/glm-mtp",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## MTP Head (from GLM-4.5)\n\nMulti-Token Prediction head used in GLM-4.5 to predict additional future tokens for speculative decoding.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: MTP Head\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-block",
+    "title": "Transformer Block",
+    "url": "https://www.tensortonic.com/problems/glm-block",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Transformer Block (from GLM-4.5)\n\nPre-norm GLM-4.5 block: RMSNorm, QK-norm attention with partial RoPE, residual, RMSNorm, dense-or-MoE FFN, residual.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Transformer Block\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  },
+  {
+    "slug": "glm-forward",
+    "title": "Full Forward",
+    "url": "https://www.tensortonic.com/problems/glm-forward",
+    "difficulty": "Medium",
+    "categories": [
+      "Research",
+      "Implement from scratch"
+    ],
+    "prompt": "## Full Forward (from GLM-4.5)\n\nEmbedding plus stacked GLM-4.5 blocks (1 dense prefix layer, then MoE layers), final RMSNorm, lm_head logits.\n\nUse **NumPy** for all array operations. Match the signatures in the starter code and pass the provided unit tests.",
+    "examples": "See starter code and test cases in the editor.",
+    "hints": "Break the module into small functions. Refer to the original paper cited in the research track.",
+    "requirements": "NumPy only. No PyTorch/TensorFlow.",
+    "constraints": "Time: 2s; Memory: 256MB",
+    "starterCode": "import numpy as np\n\ndef solve(*args, **kwargs):\n    \"\"\"Implement: Full Forward\"\"\"\n    raise NotImplementedError\n",
+    "synthetic": true,
+    "scraped": true
+  }
+]

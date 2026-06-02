@@ -1,0 +1,50 @@
+.border-brand-primary\/20{border-color:rgba(0,255,148,.2)}
+.border-brand-primary\/40{border-color:rgba(0,255,148,.4)}
+.border-t-brand-primary{--tw-border-opacity:1;border-top-color:rgb(0 255 148/var(--tw-border-opacity,1))}
+.bg-brand-accent\/\[0\.03\]{background-color:rgba(0,210,255,.03)}
+.bg-brand-dark{--tw-bg-opacity:1;background-color:rgb(5 5 5/var(--tw-bg-opacity,1))}
+.bg-brand-primary{--tw-bg-opacity:1;background-color:rgb(0 255 148/var(--tw-bg-opacity,1))}
+.bg-brand-primary\/10{background-color:rgba(0,255,148,.1)}
+.bg-brand-primary\/5{background-color:rgba(0,255,148,.05)}
+.bg-brand-primary\/\[0\.03\]{background-color:rgba(0,255,148,.03)}
+.bg-brand-primary\/\[0\.04\]{background-color:rgba(0,255,148,.04)}
+.bg-brand-primary\/\[0\.05\]{background-color:rgba(0,255,148,.05)}
+.bg-brand-secondary\/5{background-color:rgba(112,0,255,.05)}
+.bg-brand-secondary\/\[0\.04\]{background-color:rgba(112,0,255,.04)}
+.from-brand-primary{--tw-gradient-from:#00ff94 var(--tw-gradient-from-position);--tw-gradient-to:rgba(0,255,148,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
+.via-brand-dark{--tw-gradient-to:rgba(5,5,5,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#050505 var(--tw-gradient-via-position),var(--tw-gradient-to)}
+.via-brand-secondary\/10{--tw-gradient-to:rgba(112,0,255,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),rgba(112,0,255,.1) var(--tw-gradient-via-position),var(--tw-gradient-to)}
+.to-brand-accent{--tw-gradient-to:#00d2ff var(--tw-gradient-to-position)}
+.to-brand-primary\/5{--tw-gradient-to:rgba(0,255,148,.05) var(--tw-gradient-to-position)}
+.text-brand-accent{--tw-text-opacity:1;color:rgb(0 210 255/var(--tw-text-opacity,1))}
+.text-brand-accent\/80{color:rgba(0,210,255,.8)}
+.text-brand-primary{--tw-text-opacity:1;color:rgb(0 255 148/var(--tw-text-opacity,1))}
+.text-brand-primary\/80{color:rgba(0,255,148,.8)}
+.text-brand-secondary{--tw-text-opacity:1;color:rgb(112 0 255/var(--tw-text-opacity,1))}
+.text-brand-secondary\/80{color:rgba(112,0,255,.8)}
+.ring-brand-primary\/30{--tw-ring-color:rgba(0,255,148,.3)}
+.selection\:bg-brand-primary\/30 ::-moz-selection{background-color:rgba(0,255,148,.3)}
+.selection\:bg-brand-primary\/30 ::selection{background-color:rgba(0,255,148,.3)}
+.selection\:bg-brand-primary\/30::-moz-selection{background-color:rgba(0,255,148,.3)}
+.selection\:bg-brand-primary\/30::selection{background-color:rgba(0,255,148,.3)}
+.hover\:border-brand-primary\/50:hover{border-color:rgba(0,255,148,.5)}
+.hover\:bg-brand-primary\/80:hover{background-color:rgba(0,255,148,.8)}
+.hover\:text-brand-primary:hover{--tw-text-opacity:1;color:rgb(0 255 148/var(--tw-text-opacity,1))}
+.group:hover .group-hover\:text-brand-primary{--tw-text-opacity:1;color:rgb(0 255 148/var(--tw-text-opacity,1))}
+.dark\:border-brand-primary\/20:is(.dark *){border-color:rgba(0,255,148,.2)}
+.dark\:border-brand-primary\/25:is(.dark *){border-color:rgba(0,255,148,.25)}
+.dark\:bg-brand-primary:is(.dark *){--tw-bg-opacity:1;background-color:rgb(0 255 148/var(--tw-bg-opacity,1))}
+.dark\:bg-brand-primary\/10:is(.dark *){background-color:rgba(0,255,148,.1)}
+.dark\:bg-brand-primary\/15:is(.dark *){background-color:rgba(0,255,148,.15)}
+.dark\:bg-brand-primary\/20:is(.dark *){background-color:rgba(0,255,148,.2)}
+.dark\:bg-brand-primary\/70:is(.dark *){background-color:rgba(0,255,148,.7)}
+.dark\:bg-brand-primary\/\[0\.04\]:is(.dark *){background-color:rgba(0,255,148,.04)}
+.dark\:bg-brand-primary\/\[0\.06\]:is(.dark *){background-color:rgba(0,255,148,.06)}
+.dark\:bg-brand-primary\/\[0\.08\]:is(.dark *){background-color:rgba(0,255,148,.08)}
+.dark\:text-brand-primary:is(.dark *){--tw-text-opacity:1;color:rgb(0 255 148/var(--tw-text-opacity,1))}
+.dark\:text-brand-primary\/80:is(.dark *){color:rgba(0,255,148,.8)}
+.dark\:hover\:bg-brand-primary\/90:hover:is(.dark *){background-color:rgba(0,255,148,.9)}
+.dark\:hover\:bg-brand-primary\/\[0\.12\]:hover:is(.dark *){background-color:rgba(0,255,148,.12)}
+.dark\:hover\:shadow-brand-primary\/20:hover:is(.dark *){--tw-shadow-color:rgba(0,255,148,.2);--tw-shadow:var(--tw-shadow-colored)}
+.dark\:focus\:border-brand-primary\/50:focus:is(.dark *){border-color:rgba(0,255,148,.5)}
+.group:hover .dark\:group-hover\:text-brand-primary:is(.dark *){--tw-text-opacity:1;color:rgb(0 255 148/var(--tw-text-opacity,1))}

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tensortonic
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: PYTHON
+        value: python3
+      - key: CORS_ORIGIN
+        value: "*"

@@ -1,0 +1,10 @@
+const fs = require('fs');
+const ts = require('typescript');
+const code = fs.readFileSync('src/data/problemDetails.ts', 'utf8');
+const js = ts.transpileModule(code, { compilerOptions: { module: ts.ModuleKind.CommonJS } }).outputText;
+const exports = {};
+eval(js.replace(/exports\./g, 'exports.'));
+const d = exports.problemDetails.find(p => p.slug === 'pearson-correlation');
+console.log('PROMPT:', d.prompt ? d.prompt.substring(0, 50) : 'NO PROMPT');
+console.log('STATEMENT:', d.statement ? d.statement.substring(0, 50) : 'NO STATEMENT');
+console.log('TITLE:', d.title);
