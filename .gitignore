@@ -1,41 +1,98 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
+# Dependencies & build
+node_modules/
+dist/
+dist-ssr/
 *.local
-src/data/captured_apis.json
-src/data/audit_details.json
-src/data/missing_detail_slugs.json
+
+# Environment & secrets
 .env
 .env.*
 !.env.example
 !.env.production.example
 backend/.env
-backend/database.sqlite
-backend/tmp_*.py
-backend/node_modules
-scraper/node_modules
-tensortonic-scrape/node_modules
-terminals
-.cursor
-assets
-*.sqlite-journal
 
-# Editor directories and files
+# Local database & Python temp runs
+backend/database.sqlite
+backend/database.sqlite-*
+*.sqlite
+*.sqlite-journal
+backend/tmp_*.py
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS & editors
+.DS_Store
+Thumbs.db
+.idea/
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Cursor / IDE artifacts
+.cursor/
+terminals/
+assets/
+
+# --- Not needed for deploy (Vercel + Render) ---
+
+# Scrape / dev tooling (data already committed as src/data/*.ts)
+scraper/
+tensortonic-scrape/
+
+# Intermediate API JSON (source of truth is *.ts)
+src/data/*.api.json
+src/data/*.scraped.json
+src/data/*.partial.json
+src/data/*.retry.json
+src/data/captured_apis.json
+src/data/audit_details.json
+src/data/missing_detail_slugs.json
+src/data/researchProblems.api.json
+src/data/studyPlanSections.json
+src/data/studyPlans.api.json
+src/data/researchPapers.json
+src/data/problemDetails.json
+src/data/tensortonic.api.json
+src/data/potd.json
+
+# Legacy / unused scraped pages (app uses *Page.tsx + ResearchHub)
+src/Home.tsx
+src/Research.tsx
+src/MathHub.tsx
+src/StudyPlans.tsx
+src/TerrainCanvas.tsx
+src/home-page.css
+src/home-fix.css
+src/tensortonic_full.css
+
+# Root one-off dev & migration scripts
+*.cjs
+!scripts/start-production.cjs
+
+# Root dev leftovers
+tmp_*.tsx
+tmp_*.ts
+tmp_*.txt
+tmp_*.html
+raw_extracted.txt
+test_scrape.html
+PearsonCard.tsx
+qa-screenshots/
+
+# QA / screenshots (if folder present)
+**/qa-screenshots/
+
+# Puppeteer / chrome debug (local only)
+**/chrome-debug-profile/
+
+# Optional: large media not required for build (uncomment if you add videos locally)
+# public/videos/
